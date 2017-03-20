@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+    <html>
+        <head>
+            <title>
+                在ul第一个li之前或者最后一个li之后添加内容并在后台输出
+            </title>
+        </head>
+        <body>
+            <ul class="ct">
+				<li>这里是</li>
+				<li>饥人谷</li>
+				<li>任务班</li>
+			</ul>
+			<input class="ipt-add-content" placeholder="添加内容">
+			<button id="btn-add-start">开头添加</button>
+			<button id="btn-add-end">结尾添加</button>
+            <script type="text/javascript">
+			    var ct = document.querySelector('.ct')
+				ct.addEventListener('click',function(e){
+					console.log(e.target.innerText)
+				})
+
+				var btnAddSta = document.getElementById('btn-add-start')
+				var btnAddEnd = document.getElementById('btn-add-end')
+				var content = document.getElementsByClassName('ipt-add-content')[0]
+				var reg = /\S+/
+				var btnAdd
+
+				btnAddSta.addEventListener('click',function(e){
+					if(reg.test(content.value)){
+						btnAdd = document.createElement('li')
+						btnAdd.innerText = content.value
+						var theFirstChild = ct.firstChild//插入第一个孩子的节点
+						ct.insertBefore(btnAdd,theFirstChild)
+						content.value=''
+					}
+				})
+				
+				btnAddEnd.addEventListener('click',function(e){
+					if(reg.test(content.value)){
+						btnAdd = document.createElement('li')
+			            btnAdd.innerText = content.value
+						ct.appendChild(btnAdd)
+						content.value=''
+					}
+				})
+            </script>
+        </body>
+    </html> 

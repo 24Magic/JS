@@ -1,0 +1,33 @@
+<script>
+    //这2种方法类似，匿名函数作为变量赋值给fnArr[i]
+    //在立即执行函数这个闭包的作用域中,外部i的值通过n传入局部作用域
+    
+    //return n的值就是i的值
+	
+	var fnArr = []
+    for(var i =0; i<10 ; i++){
+    	(function (n){	
+    		fnArr[i] = function(){
+    		return n;
+    	    }
+        }
+    )(i)
+    };
+    console.log(fnArr[3]())    //3
+
+<-------------------------------------------------->
+
+ var fnArr = []
+    for(var i =0; i<10 ; i++){
+    	(function (n){	
+    		var n = i
+    		fnArr[i] = function(){
+    		return n;
+    	    }
+        }
+    )()
+    };
+    console.log(fnArr[3]())    //3
+
+
+</script>

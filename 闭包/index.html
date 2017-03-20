@@ -1,0 +1,10 @@
+<script>
+//fnArr无法即时读取外部作用域中i的值
+	var fnArr = []
+	for (var i=0;i<10;i++){
+		fnArr[i]=function(){
+			return i;
+		}
+	}      
+	console.log(fnArr[3]())    //10;产生10个fnArr[i]，但是都输出了i=10
+</script>

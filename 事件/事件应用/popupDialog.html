@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            点击button弹框；点击'确定'，'取消'，空白处，消失。
+        </title>
+        <style type="text/css">
+        .btn {
+          cursor: pointer;
+          padding: 10px 20px;
+          font-size: 20px;
+          color: #fff;
+          outline: none;
+          border:#fff;
+          background-color: #6ff;
+          box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+        }
+        .box{
+			position:absolute;
+			left:50%;
+			top:50%;
+			margin-left:-150px;
+			margin-top:-100px;
+			width:300px;
+			height:200px;
+			background-color:#fff;
+			box-shadow: 1.5px 3px 5px 1px rgba(0,0,0,0.25);
+            border: 0.5px solid #eee;
+            border-radius: 2px;
+			display:none;
+		}
+        .title {
+            padding-left: 5px; 
+          }
+		.title .x{
+		    position: absolute;
+            top: -2px;
+            right:-2px;
+			float: right;
+			margin-right:10px;
+			font-weight: 300;
+			font-size: 22px;
+            cursor:pointer;
+		}
+        .title .txt{
+          font-weight: 500;
+          font-size: 15px;
+        }
+        .box .btn-n {
+          position: absolute;
+          left: 68%;
+          bottom: 5%;
+          display: inline-block;
+        }
+        .btn-n .determin,
+        .btn-n .cancel {
+          border: #fff;
+          cursor: pointer;
+          background-color: #fff;
+          outline: none;
+        }
+        .text {
+          margin-bottom: 30px;
+        }
+        .text p {
+          padding: 5px;
+          font-size: 13px;
+        }
+        .text-other {
+          font-size:4px;
+          color: #666;
+          margin-bottom: -10px
+        }
+        </style>
+    </head>
+    <body>
+        <button class="btn">
+            CLICK
+        </button>
+        <div class="box">
+            <div class="btn-n">
+                <button class="determin">
+                    确定
+                </button>
+                <button class="cancel">
+                    取消
+                </button>
+            </div>
+            <div class="title">
+              <div class="x">
+                x
+              </div>
+              <p class="txt">
+                我是标题
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                我是内容1
+              </p>
+              <p>
+                我是内容2
+              </p>
+            </div>
+            
+            <input class="ipt" type="checkbox">
+                <span class="text-other">
+                    不再显示此对话框
+                </span>
+            </input>
+        </div>
+        <script type="text/javascript">
+            function $(cls){
+              return document.querySelector(cls)
+            }
+            function $$(cls){
+              return document.querySelectorAll(cls)
+            }
+          
+            var btn = $('.btn')
+			var box = $('.box')
+            var xxx = $('.x')
+            var btnDetermin = $('.determin')
+            var btnCancel = $('.cancel')
+           
+			btn.addEventListener('click',function(e){
+				box.style.display='block'
+
+				//阻止向外冒泡使全局都是'none'的属性
+				e.stopPropagation()
+			})
+			box.addEventListener('click',function(e){
+
+				//阻止'none'冒泡到box导致点击box消失
+				e.stopPropagation()
+			})
+         
+			window.addEventListener('click',function(){
+				box.style.display='none'
+			})
+            xxx.addEventListener('click',function(){
+				box.style.display='none'
+			})
+            btnDetermin.addEventListener('click',function(){
+				box.style.display='none'
+                btnDetermin.style.border='#fff'
+			})
+            btnCancel.addEventListener('click',function(){
+				box.style.display='none'
+			})
+		
+        </script>
+    </body>
+</html>

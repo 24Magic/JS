@@ -1,0 +1,16 @@
+<script>
+
+//典型闭包，内部匿名函数通过var n = i访问外部函数作用域
+	var fnArr = []
+		for(var i=0;i<10;i++){
+			fnArr[i] = (function(){
+				var n = i
+				return function(){
+					return n;
+				}
+		    }
+	    })()
+
+	console.log(fnArr[3]())   //3
+    
+</script>
