@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<style type="text/css">
+		html,body{
+			margin: 0;
+		}
+		input{
+			margin: 20px;
+			width: 200px;
+		}
+	</style>
+	<input id="input" type="text" placeholder="http://b.hgz.com:8080/b.html">
+	<script>
+		// URL:http://b.hgz.com:8080/b.html
+		document.querySelector('#input').addEventListener('input',function(){
+			window.parent.document.querySelector('input').value = this.value
+		})
+
+		document.domain = 'hgz.com';
+	</script>
+
+</html>

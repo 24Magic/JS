@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<style type="text/css">
+		ul,li{
+			margin: 0;
+			padding: 0;
+		}
+		li:hover{
+			background-color: #6ff;
+			color: #fff;
+		}
+		#btn{
+			display:block;
+			margin: 10px auto;
+			text-decoration: none;
+			color: #fff;
+			background: #6ea;
+			width: 80px;
+			line-height: 20px;
+			font-size: 20px;
+			text-align: center;
+		}
+	</style>
+<body>
+	<ul id="ct">
+		<li>内容一</li>
+		<li>内容二</li>
+		
+	</ul>
+	<a href="" id="btn">加载更多</a>
+	<script type="text/javascript">
+		var btn = document.querySelector("#btn")
+		var ct = document.querySelector("#ct")
+		var pageIndex = 0
+		var isDataArrive = true
+
+		btn.addEventListener('click',function(e){
+			e.preventDefault()
+			if(!isDataArrive){
+				return;
+			}
+			var xhr = new XHRHttpRequest()
+			xhr.onreadystatechange = function(){
+				if(xhr.readystate === 4){
+					if(xhr.status === 200 || xhr.status == 300){
+						var results = JSON.parse(xhr.responseText)
+						console.log(results)
+						var fragment = document.createDocumentFragment()
+						for (var i = 0;i<results.length;i++){
+							var node = document.createElement('li')
+							node.innerText = results[i]
+							fragment.appendChild(node)
+						}
+						ct.appendChild(fragment)
+						pageIndex = pageIndex + 5
+					}else{
+						console.log('出错了')
+					}
+					isDataArrive = true
+				}
+			}
+			xhr.open('get','/loadMore?index='+pageIndex+'&length=5',true)
+			xhr.send()
+			isDataArrive = false
+		})
+
+
+	</script>
+</body>
+</html> -->
+
+
+<script type="text/javascript">
+	var foo = 4;
+switch (true) { // 非变量 TRUE 替代 foo
+    case foo >= 0 && foo <= 3:
+        alert('yes');
+        break;
+    default:
+        alert('not');
+}
+</script>
