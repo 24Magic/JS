@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>图片懒加载
+        </title>
+    </head>
+    <style type="text/css">
+    	body{
+    		background-color: #ccc;
+    	}
+		.ct{
+			width: 880px;
+			margin: 0 auto;
+			background-color: #fff;
+		}
+		.ct:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.ct>img {
+			display: block;
+			float: left;
+			width: 238px;
+			height: 300px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-left: 40px;
+			border: 1px solid #ccc;
+			box-shadow: 1.5px 3px 5px 1px rgba(0,0,0,0.25);
+		}
+    </style>
+    <body>
+        <div class="ct">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/17/57/26/36H58PICZmD.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/26/04m58PICZir.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/17/55/99/53p58PICkGC.jpg!qtwebp226">
+
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/uploadfilepic/shiliang/2009-03-02/58PIC_siyecao0717_200903026b9f1f98846d63b3.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/13/84/37/82m58PIC8Gj.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/66W58PICrca.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/17/68/91/86558PIC2VH.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/63I58PICk36.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/60r58PIC5FJ.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/58258PICWrC.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/61Y58PICmKd.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/88v58PIC2QE.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/26/01w58PIC2pi.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/58PIC58PICN58PIC3Za.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/26/23/19/58c95ac46c065.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/67P58PICdVQ.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/58w58PICfz4.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/56C58PICZzF.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/63z58PICunW.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/26/19K58PICbA3.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/53m58PICnQa.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/87G58PICWDg.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/17/62/78/43q58PIC7tX.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/62X58PICh4G.jpg!qtwebp226">
+
+        </div>
+        <script src="./jquery-3.2.0.min.js"></script>
+        <script type="text/javascript">
+
+        	//开头先执行一次预加载
+        	check();
+
+        	//执行scroll事件
+        	$(window).on('scroll',check)
+
+        	function check(){
+        		var $imgs = $('.ct img')
+
+        		//提高性能，将已加载过的添加标记，减少重复遍历
+        		$imgs.not('.load').each(function(){
+				 	if( isShow($(this)) ){
+				 		showImg($(this))
+				 	}
+			 	})
+        	}
+
+        	//加载图片，将src的值替换成data-src的值
+        	function showImg($img){
+        		$img.each(function(){
+        			var imgUrl = $(this).attr('data-src')
+			 		$(this).attr('src',imgUrl)
+			 		$(this).addClass('load')
+        		})
+			 }
+
+			 //判断图片是否出现在可视范围
+			function isShow($node){
+				var scrollTop = $(window).scrollTop(),
+				    windowHeight = $(window).height(),
+					offsetTop = $node.offset().top,
+					nodeHeight = $node.outerHeight()
+				if(offsetTop + nodeHeight> scrollTop && offsetTop < windowHeight + scrollTop){
+					return true
+				}else{
+					return false
+				}
+			}	
+		</script>
+	</body>
+</html>

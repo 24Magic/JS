@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<style type="text/css">
+		ul,li{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			text-decoration: none;
+
+		}
+		.ct {
+			position: relative;
+		}
+		.ct-1 {
+			width: 200px;
+				
+		}
+		.ct-1>li {
+			width: 200px;
+			height: 40px;
+			color: #fff;
+			background-color: #c7171e;
+			cursor: pointer;
+		}
+	    .ct-1>li>p {
+	    	padding: 10px 18px;
+	    	line-height: 20px;
+	    	display: inline-block;
+    		margin: 0;
+    		font-size: 14px;
+	    }
+
+		.ct-1 .mark {
+			position: relative;
+			left: 175px;
+			bottom: 32px;
+			font-size: 15px;
+			width: 0;
+		}
+		.list{
+			position: relative;
+		}
+		.ct-h {
+			position: absolute;
+			left: 200px;
+			width: 200px;
+			top: 0;
+			border: 1px solid #ccc;
+			display: none;
+		}
+		.ct-h li{
+			display: inline-block;
+			width: 97px;
+			height: 40px;
+			text-align: center;
+			cursor: default;
+		}
+		.ct-h li a {
+			display: inline-block;
+			margin: 0 auto;
+			font-size: 13px;
+			line-height: 16px;
+			padding: 12px 0;
+			color: #333;
+		}
+		.line::before {
+			content:'';
+			display: block;
+			position: relative;
+			top: 39px;
+			left: 10px;
+			width: 180px;
+			border-bottom:0.5px dotted #de272e;
+		}
+	</style>
+<body>
+	<div class="ct">
+		<ul class="ct-1">
+			<li class="list line">
+				<p>珠宝玉器</p>
+				<div class="mark">></div>
+				<ul class="ct-h" data-text="">
+					<li><a href="#">翡翠</a></li>
+					<li><a href="#">玉石</a></li>
+					<li><a href="#">宝石</a></li>
+					<li><a href="#">水晶</a></li>
+					<li><a href="#">玛瑙</a></li>
+					<li><a href="#">珍珠</a></li>
+					<li><a href="#">钻石</a></li>
+					<li><a href="#">琥珀</a></li>
+					<li><a href="#">和田</a></li>
+					<li><a href="#">琥珀</a></li>
+				</ul>
+			</li>
+			<li class="list line">
+				<p>珠宝玉器</p>
+				<div class="mark">></div>
+				<ul class="ct-h">
+					<li><a href="#">翡翠</a></li>
+					<li><a href="#">玉石</a></li>
+					<li><a href="#">宝石</a></li>
+					<li><a href="#">水晶</a></li>
+					<li><a href="#">玛瑙</a></li>
+					<li><a href="#">珍珠</a></li>
+				</ul>
+			</li>
+			<li class="list line">
+				<p>珠宝玉器</p>
+				<div class="mark">></div>
+				<ul class="ct-h">
+					<li><a href="#">翡翠</a></li>
+					<li><a href="#">玉石</a></li>
+					<li><a href="#">宝石</a></li>
+					<li><a href="#">水晶</a></li>
+				</ul>
+			</li>
+			<li class="list line">
+				<p>珠宝玉器</p>
+				<div class="mark">></div>
+				<ul class="ct-h">
+					<li><a href="#">翡翠</a></li>
+					<li><a href="#">玉石</a></li>
+					<li><a href="#">宝石</a></li>
+					<li><a href="#">水晶</a></li>
+					<li><a href="#">玛瑙</a></li>
+					<li><a href="#">珍珠</a></li>
+				</ul>
+			</li>
+			<li class="list">
+				<p>珠宝玉器</p>
+				<div class="mark">></div>
+				<ul class="ct-h">
+					<li><a href="#">翡翠</a></li>
+					<li><a href="#">玉石</a></li>
+					<li><a href="#">宝石</a></li>
+					<li><a href="#">水晶</a></li>
+				</ul>
+			</li>
+		</ul>
+		
+	</div>
+	<script src="./jquery-3.2.0.min.js"></script>
+	<script>
+
+		$('.ct-1').on('mouseover', '.list', function(){
+
+				$(this).children('.ct-h').show();
+
+		})
+		$('.ct-1').on('mouseout', '.list', function(){
+				$(this).children('.ct-h').hide();
+			
+		})
+	</script>
+</body>
+</html>
