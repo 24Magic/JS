@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>瀑布流新闻加载页</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+.ct {
+	margin: 0 auto;
+	width: 1000px;
+}
+.news {
+	position: relative;
+
+}
+.news::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.item{
+	position: absolute;
+	width: 280px;
+	margin: 10px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	transition: all .3s;
+	opacity: 0;
+	box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.25);
+}
+.item a {
+	display: block;
+	width: 260px;
+	margin: 10px;
+}
+.item a img {
+	width: 260px;
+	
+}
+.item h4 {
+	margin: 10px 0;
+	border-bottom: 1px solid #ccc;
+	height: 25px;
+}
+.item p {
+	color: #aaa;
+	font-size: 8px;
+	margin: 10px 0;
+}
+
+.btn {
+	visibility: hidden;
+	height: 20px;
+}
+                      
+</style>
+<body>
+<div class="ct">
+ <div class='news'>
+  
+  <div class="item">
+	  <a href="#"><img src="http://n.sinaimg.cn/tech/transform/20170329/RbFO-fycstww1718348.jpg"></a> 
+	  <h4>青蛙挣扎无效遭苍鹭一口吞食</h4>
+	  <p>苍鹭的嘴紧咬住青蛙的四肢，青蛙作为两栖动物中的运动健将，拼命挣扎却效果甚微。面对体型比自己大太多的劲敌，青蛙最终还是挣扎无效，被苍鹭吞下了肚。</p>
+  </div>
+
+ </div>
+</div>
+<div class="btn">没有更多了~</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+	 var newsFormate = (function(){
+	 	//提高性能
+	 	function init(){
+	 	var clock
+	 	$(window).on('scroll', function(){
+	 		if(clock){
+	 			clearTimeout(clock)
+	 		}
+	 		clock = setTimeout(function(){
+	 			checkNews()
+	 		}, 100)
+	 	})
+
+	 	checkNews()	
+	 	}
+
+	 	//判断news的状态
+        function checkNews(){
+        	if( isShow($('.btn')) ){
+        		loadAndPlace()	
+        	}
+        }
+
+        function isShow($el){
+			var scrollTop = $(window).scrollTop(),
+				windowHeight = $(window).height(),
+				offsetTop = $el.offset().top,
+				nodeHeight = $el.outerHeight()
+			if(offsetTop + nodeHeight> scrollTop && offsetTop < windowHeight + scrollTop){
+				return true
+			}else{
+				return false
+			}
+		}
+	 	
+
+
+        var curPage = 1,
+        	perPageCount = 9
+        function loadAndPlace(){
+        	$.ajax({
+        		url: 'http://platform.sina.com.cn/slide/album_tech',
+        		dataType: 'jsonp',
+        		jsonp: "jsoncallback",
+        		data: {
+        			app_key: '1271687855',
+        			num: perPageCount,
+        			page: curPage
+        		}
+        	}).done(function(ret){
+        		if(ret && ret.status && ret.status.code ==='0'){
+        			place(ret.data)	
+        			console.log(ret.data)	//，数据没问题，放置数据
+        			curPage++
+        		}else{
+        			console.log('get error data')
+        		}
+        	})
+        }
+
+        function place(nodeList){
+        	console.log(nodeList)
+        	$.each(nodeList, function(idx, item){
+        		var $node = getNode(item)	//获取data中每一项
+        		$node.find('img').load(function(){
+        			$('.news').append($node)
+        			waterFall($node)
+        		})
+        	})
+        }
+
+        //把数据转换成html中的节点
+        function getNode(item){
+			var htmls = ''
+				htmls += '<div class="item">';
+				htmls += '<a href="' + item.url + '">';
+				htmls += '<div class="thumb">';
+				htmls += '<img src="' + item.img_url + '">';
+				htmls += '</div><h4>' + item.short_name + '</h4>'
+				htmls += '<p>' + item.short_intro + '</p>'
+				htmls += '</a></div>'
+			return $(htmls)
+		}
+
+		//对每次获得数据单独进行瀑布流
+		var sumHeightArr = [],
+			nodeWidth = $('.item').outerWidth(true),
+			colLength = parseInt( $('.news').width() / nodeWidth );
+
+		for(var i=0; i<colLength; i++){
+			 	sumHeightArr.push(0)
+			 }
+	 	function waterFall($node){
+
+	 		console.log($node)
+		 $node.each(function(){
+		 	$cur = $(this)
+		 	var idx =0,
+				minSumHeight = sumHeightArr[0];
+
+			 for(var i=0; i<sumHeightArr.length; i++){
+			 	if(sumHeightArr[i] < minSumHeight){
+			 		minSumHeight = sumHeightArr[i]
+			 		idx = i
+			 	}
+			 } 
+			 $cur.css({
+			 	left: nodeWidth*idx,
+			 	top: minSumHeight,
+			 	opacity: 1
+			 })
+			 sumHeightArr[idx] += $cur.outerHeight(true)
+
+			 $('.news').height(Math.max.apply(null, sumHeightArr))
+		    })
+		}
+		
+		return {
+	 		init: init
+	 	}
+
+	})()
+
+	newsFormate.init()
+
+</script>
+</body>
+</html>
