@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>carousal</title>
+</head>
+<style type="text/css">
+	ul,li{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	a{
+		text-decoration: none;
+	}
+
+	.carousal {
+		position: relative;
+		top: 200px;
+		height: 200px;
+		width: 300px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.carousal .img-ct {
+		position: absolute;
+		width: 1200px;
+	}
+	.carousal .img-ct::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.carousal .img-ct li{
+		float: left;
+	}
+	.carousal .img-ct img {
+		width: 300px;
+		height: 200px;
+	}
+
+	.btn-next,
+	.btn-pre{
+		position: absolute;
+		top: 50%;
+		margin-top: -15px;
+		width: 30px;
+		height: 30px;
+		color: #fff;
+		font-size: 18px;
+		line-height: 30px;
+		text-align: center;
+		border-radius: 50%;
+		background-color: #000;
+		opacity: 0.5;
+		display: block;
+	}
+	.btn-next{
+		right: 0;
+	}
+
+	.bullet li {
+		display: inline-block;
+		width: 12px;
+		height: 4px;
+		margin: 0 4px;
+		background-color: #fff;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+	.bullet-ct {
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+	.bullet {
+		display: inline-block;
+	}
+	.bullet .active {
+		background-color: #aaa;
+	}
+</style>
+<body>
+ <div class="carousal">
+	 <ul class="img-ct">
+	 	<li data-src='0.jpg'><a href=""><img src="http://cdn.jirengu.com/book.jirengu.com/img/5.jpg"></a></li>
+	 	<li data-src='1.jpg'><a href=""><img src="http://cdn.jirengu.com/book.jirengu.com/img/2.jpg"></a></li>
+	 	<li data-src='2.jpg'><a href=""><img src="http://cdn.jirengu.com/book.jirengu.com/img/3.jpg"></a></li>
+	 	<li data-src='3.jpg'><a href=""><img src="http://cdn.jirengu.com/book.jirengu.com/img/4.jpg"></a></li>
+	 </ul>
+	 <div class="bullet-ct">
+		 <ul class="bullet">
+		 	<li class="active"></li>
+		 	<li></li>
+		 	<li></li>
+		 	<li></li>
+		 </ul>	 	
+	 </div>
+	 <a class="btn-pre" href="#">&lt;</a>
+	 <a class="btn-next" href="#">&gt;</a> 	
+ </div>
+ <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+ <script type="text/javascript">
+ 	$(function (){
+
+ 		//声明基本对象
+ 		var $imgCt = $('.img-ct'),
+ 			$bullet = $('.bullet'),
+ 			$btnNext = $('.btn-next'),
+ 			$btnPre =$('.btn-pre')
+ 			$carousal = $('.carousal')
+
+ 		//声明伪装的第一张和最后一张图片	
+ 		var $firstImg = $imgCt.children('li').first(),
+ 			$lastImg = $imgCt.children('li').last()
+
+ 		var currentIndex = 0,	//声明一个队列变化的标记
+ 		    isAnimate = false	//声明一个动画状态的标记
+
+ 		var	$imgLength = $imgCt.children().length,    //声明一个原始队列的长度
+ 			$imgWidth = $('.img-ct img').first().width()	//图片宽度
+			// $currentLeft = -$imgWidth*(currentIndex+1)	//获取即时的left
+
+		//添加伪装的元素到队列中去
+ 		$imgCt.prepend($lastImg.clone())
+ 		$imgCt.append($firstImg.clone())
+
+ 		//扩充父容器的宽度，使其包含伪装元素，并将位置前移到第一张原始图片的位置
+ 		$imgCt.width($firstImg.width()*$imgCt.children().length)
+ 		$imgCt.css('left', -$imgWidth)
+
+ 		//鼠标hover事件
+ 		$carousal.on('mouseover', clearIv).on('mouseout', setIv)
+
+ 		var nIntervId
+ 		//自动播放
+ 		function setIv(){
+ 				nIntervId = setInterval(playNext, 1800)
+ 		}
+ 		setIv()
+ 		//停止播放
+ 		function clearIv(){
+ 			clearInterval(nIntervId)
+ 		}
+
+ 		//给向前按钮添加向前事件
+ 		$btnPre.on('click', function(e){
+ 			e.preventDefault() 
+ 			playPre()
+ 		})
+ 		//给向前按钮添加向前事件
+ 		$btnNext.on('click', function(e){
+ 			e.preventDefault()
+ 			playNext()
+ 		})
+
+ 		//给小黑点添加点击事件
+ 		$bullet.on('click','li',function(){
+ 			var idx = $(this).index(),
+ 				$imgCtLeft = -$imgWidth*(currentIndex+1),	//获得$imgCt即时left的值
+ 				currentLeft = -(idx - currentIndex)*$imgWidth + $imgCtLeft 	//计算获得点击的位置left的值
+
+ 				currentIndex = idx  // 将现在图片的序号赋给currentIndex
+ 			
+ 				// console.log(currentIndex)
+ 				// console.log(currentLeft)
+ 			play(currentLeft)
+ 		})
+
+
+ 		//随机切换到目标图片的函数
+ 		function play(n){
+ 			if(isAnimate) return;
+ 			isAnimate = true
+ 			console.log(n)
+ 			$imgCt.animate({
+ 				left: n
+ 			},'slow', function(){
+ 				if(currentIndex === $imgLength){
+ 					$imgCt.css('left', -$imgWidth)
+ 					currentIndex = 0
+ 				}
+ 				isAnimate = false		//动画完成之后解锁
+ 				setBullet()		//动画完成之后使小黑点跟随
+ 			})
+ 		}
+
+ 		//向后函数
+ 		function playNext(){
+ 			if(isAnimate) return;
+ 			isAnimate = true
+
+ 			$imgCt.animate({
+ 				left: '-=300'
+ 			},'slow', function(){
+ 				currentIndex++;
+ 				if(currentIndex === $imgLength){
+ 					$imgCt.css('left', -$imgWidth)
+ 					currentIndex = 0
+ 				}
+ 				isAnimate = false		//动画完成之后解锁
+ 				setBullet()		//动画完成之后使小黑点跟随
+ 			})
+ 		}
+ 		//向前函数
+ 		function playPre(){
+ 			if(isAnimate) return;
+ 			isAnimate = true
+ 			
+ 			$imgCt.animate({
+ 				left: '+=300'
+ 			},'slow', function(){
+ 				currentIndex--;
+ 				// console.log(currentIndex)
+ 				if(currentIndex < 0){
+ 					$imgCt.css('left', -($imgLength*$firstImg.width()) )
+ 					currentIndex = $imgLength-1
+ 				}
+ 				isAnimate = false	//动画完成之后解锁
+ 				setBullet()		//动画完成之后使小黑点跟随
+ 			})
+ 		}
+ 		//图片下边缘动态框跟随图片动态变化函数
+ 		function setBullet(){
+ 			$bullet.children()
+ 				   .removeClass('active')
+ 				   .eq(currentIndex)
+ 				   .addClass('active')
+ 		}
+ 	})
+ </script>
+</body>
+</html>
