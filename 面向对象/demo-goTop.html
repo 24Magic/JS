@@ -25,18 +25,18 @@
  		background-color: #6ff;
  	}
  	.go-top{
- 		position: fixed;
-	    bottom: 0;
-	    right: 40px;
-	    width: 30px;
-	    height: 40px;
-	    color: #000;
-	    text-align: center;
-	    padding: 5px 10px;
-	    font-size: 16px;
-	    background: #eee;
-	    opacity: .8;
-	    cursor: pointer;
+ 		 position: fixed;
+	   bottom: 0;
+	   right: 40px;
+	   width: 30px;
+	   height: 40px;
+	   color: #000;
+	   text-align: center;
+	   padding: 5px 10px;
+	   font-size: 16px;
+	   background: #eee;
+	   opacity: .8;
+	   cursor: pointer;
  	}
  </style>
 <body>
@@ -58,7 +58,9 @@ var GotTop = function($container, $element) {
   this.element = $element;
 }
 GotTop.prototype.bindEvent = function(){
+  
 	var _this = this
+
   	$(window).scroll(function(){
   		var scrollTop = _this.ct.scrollTop()
   		if(scrollTop > 100){
@@ -67,19 +69,22 @@ GotTop.prototype.bindEvent = function(){
   			_this.element.hide('slow')
   		}
   	})
+
   	_this.element.on('click', function(){
       _this.ct.animate({
       	scrollTop: 0
       }, 600)
     })
 }
+
  GotTop.prototype.createNode = function(){
     this.ct.append(this.element)
   }
-var goTop = new GotTop($('body'), $('<div class="go-top">顶部</div>'))
 
+var goTop = new GotTop($('body'), $('<div class="go-top">顶部</div>'))
 goTop.bindEvent()
 goTop.createNode()
+
 </script>
 </body>
 </html>
