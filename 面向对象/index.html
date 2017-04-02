@@ -1,0 +1,54 @@
+<script type="text/javascript">
+
+//JS继承一个类
+
+	var Cat = function(){
+		Animal.apply(this, arguments)
+		this.tail = '一条尾巴'
+	}
+
+	//下面3句话只是为了实现Cat.prototype.__proto__ = Animal.prototype
+	var F = function(){};
+	F.prototype = Animal.prototype;
+	Cat.prototype = new F();
+
+	//纠正一下constructor
+	Cat.prototype.constructor = Cat;
+
+	Cat.prototype.run = function(){
+		console.log('猫儿在跑')
+	}
+
+	Cat.prototype.say = function(){
+		console.log('喵喵喵')
+	}
+
+
+//不用类实现继承
+	var animal = {
+		'种类':'动物',
+		say: function(){
+			console.log('动物叫')
+		}
+	}
+
+	var cat = extend(animal)	//使用任意手段让cat.__proto__ === animal
+
+	cat.tail = ''
+	cat.say = function(){
+		console.log('喵喵喵')
+	}
+	
+
+	//代码简洁还有兼容性
+	extend(animal,function(){
+		tail: ''
+		say: function(){
+			console.log('喵喵喵')
+		}
+	})
+	
+</script>
+
+
+

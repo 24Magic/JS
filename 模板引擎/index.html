@@ -1,0 +1,59 @@
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+
+	//需求： 实现字符串string中{n}的替换成特定内容
+	function stringFormate(string){
+
+		/* arguments是伪数组，没有数组方法，
+		 * 所以借用一个空数组来把arguments中
+		 * 从第一个开始到最后的参数传递进去
+		 * 1代表数组中索引从1开始
+		 */
+
+		 /*
+			'{h1}, {0}, {1}, {2}','name', 'songs'
+			--> ['name', 'songs']
+		 */
+		var params = [].slice.call(arguments, 1)
+
+		/*根据正则匹配出来的数组
+			['{0}', 0, 4 ,"h1, {0}, {1} {2}"]
+			['{1}', 1, 9 ,"h1, {0}, {1} {2}"]
+			['{2}', 2, 14 ,"h1, {0}, {1} {2}"]
+		*/
+		var regex = /\{(\d+)\}/g
+
+		//匹配到字符串中的{n}替换成params[index]
+		string = string.replace(regex, function(){
+
+		/* 然后找到arguments[1]变成index
+	 	 * 0
+	 	 * 1
+	 	 * 2
+	 	 */
+		var index = arguments[1]
+
+		/* 然后根据这个索引值，用params[index]  
+	 	 * 来将string里的{n}替换掉
+	 
+		 string = '{h1}, {0}, {1}, {2}', 'name', 'songs'
+		 -->  '{h1}, name, songs'
+		 */
+		return params[index]
+
+		})
+	  return string
+	}
+
+
+	//实现下面的功能
+	console.log(stringFormate('hi, {0}', 'Mike'))	// hi Mike
+
+	console.log(stringFormate('hi, {1}', 'Mike', 'YJ'))	// hi YJ
+
+	console.log(stringFormate('hi, {0} and {1}', 'Mike', 'YJ'))	// hi Mike and YJ
+
+</script>
+
+

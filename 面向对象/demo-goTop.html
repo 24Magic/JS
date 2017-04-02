@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+ <style type="text/css">
+ 	*{
+ 		margin: 0;
+ 		padding: 0;
+ 	}
+ 	ul,li{
+ 		list-style: none;
+ 	}
+ 	.item{
+ 		margin: 20px;
+ 		height: 200px;
+ 		text-align: center;
+ 		line-height: 200px;
+ 		font-size: 20px;
+ 		font-style: oblique;
+ 		border: 1px solid #666;
+
+ 	}
+ 	.item:hover{
+ 		background-color: #6ff;
+ 	}
+ 	.go-top{
+ 		position: fixed;
+	    bottom: 0;
+	    right: 40px;
+	    width: 30px;
+	    height: 40px;
+	    color: #000;
+	    text-align: center;
+	    padding: 5px 10px;
+	    font-size: 16px;
+	    background: #eee;
+	    opacity: .8;
+	    cursor: pointer;
+ 	}
+ </style>
+<body>
+ <ul class="content">
+ 	<li class="item">内容</li>
+ 	<li class="item">内容</li>
+ 	<li class="item">内容</li>
+ 	<li class="item">内容</li>
+ 	<li class="item">内容</li>
+ 	<li class="item">内容</li>
+ 	<li class="item">内容</li>
+ 	<li class="item">内容</li>
+ </ul>
+ <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+	
+var GotTop = function($container, $element) {
+  this.ct = $container;
+  this.element = $element;
+}
+GotTop.prototype.bindEvent = function(){
+	var _this = this
+  	$(window).scroll(function(){
+  		var scrollTop = _this.ct.scrollTop()
+  		if(scrollTop > 100){
+  			_this.element.show('slow')
+  		}else{
+  			_this.element.hide('slow')
+  		}
+  	})
+  	_this.element.on('click', function(){
+      _this.ct.animate({
+      	scrollTop: 0
+      }, 600)
+    })
+}
+ GotTop.prototype.createNode = function(){
+    this.ct.append(this.element)
+  }
+var goTop = new GotTop($('body'), $('<div class="go-top">顶部</div>'))
+
+goTop.bindEvent()
+goTop.createNode()
+</script>
+</body>
+</html>
