@@ -32,8 +32,17 @@ define(['jquery'],function($){
 
        _this.$targets.children('#bootstrap').find('.navbar-container .navbar li').each(function(index, item){
         $(item).children('a').removeClass('bgc')
+
+        if(scrollTop<headerHeight){
+          _this.$targets.children('#bootstrap').animate({
+            paddingBottom: 15 + 'px'
+          }, 0)
+        }
+
         if(scrollTop>headerHeight){
-          
+          _this.$targets.children('#bootstrap').animate({
+            paddingBottom: 5 + 'px'
+          }, 0)
           $(item).children('a').removeClass('bgc')
           $(item).children('.a').addClass('bgc')
         }
