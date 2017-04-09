@@ -259,10 +259,6 @@ section {
 	opacity: .9;
 }
 
-
-
-
-
 .text-center .icons {
 	margin: 0 auto;
 	width: 100px;
@@ -733,30 +729,36 @@ section {
 	width: 265px;
 	margin: 10px;
 	margin-bottom: 30px;
-	border: 1px solid #ccc;
-	background-color: #fff;
+	background-color: #FFFFD9;
 	transition: all .3s;
 	opacity: 0;
-	box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.25);
+	box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
 }
 .news-container .news .item a {
 	display: block;
-	width: 245px;
-	margin: 10px;
+	text-align: center;
+	width: 265px;
+	margin: 0px;
 }
 .news-container .news .item a img {
-	width: 245px;
+	width: 265px;
 	
 }
 .news-container .news .item h4 {
+	display: inline-block;
+	width: 245px;
 	margin: 10px 0;
+	padding-bottom: 10px;
+	font-size: 17px;
+	line-height: 25px;
 	border-bottom: 1px solid #ccc;
-	height: 25px;
 }
 .news-container .news .item p {
-	color: #999;
-	font-size: 8px;
-	margin: 10px 0;
+	display: inline-block;
+	width: 245px;
+	color: #666;
+	font-size: 14px;
+	margin: 0 0 10px 0;
 }
  .news-container .btn{
  	cursor: pointer;
@@ -775,19 +777,18 @@ section {
  /*轮播*/
  .carousel {
 		position: relative;
-		/*width: 1000px;
-		margin: 0 auto;*/
+		
 		margin-bottom: 80px;
 		width: 100%;
 	}
 	.carousel-container {
 		position: relative;
-		/*height: 100%;*/
+		
 		overflow: hidden;
 	}
 	.carousel-container .img-ct {
 		position: absolute;
-		/*width: 4000px;*/
+	
 	}
 	.carousel-container .img-ct::after{
 		content: '';
@@ -797,10 +798,7 @@ section {
 	.carousel-container .img-ct li{
 		float: left;
 	}
-	/*.carousel-container .img-ct img {
-		width: 1000px;
-		height: 600px;
-	}*/
+	
 
 	.btn-next,
 	.btn-pre{
@@ -855,14 +853,13 @@ section {
 	}
 
 
-	/*icon */
 
-
- @font-face {
+@font-face {
   font-family: 'iconfont';  /* project id 236226 */
-  src: url('//at.alicdn.com/t/font_d66e1d24lzzg2e29.eot');
-  src: url('//at.alicdn.com/t/font_d66e1d24lzzg2e29.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_d66e1d24lzzg2e29.woff') format('woff'),
-  url('//at.alicdn.com/t/font_d66e1d24lzzg2e29.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_d66e1d24lzzg2e29.svg#iconfont') format('svg');
-} 
+  src: url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.eot');
+  src: url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.svg#iconfont') format('svg');
+}
+

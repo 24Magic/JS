@@ -1,5 +1,5 @@
 requirejs.config({
-			baseUrl: '../js',
+			baseUrl: '../js/',
 			paths: {
 				'jquery': 'lib/bower_components/jquery-3.2.0.min'
 			}

@@ -17,10 +17,11 @@
 	
 // })
 
-AMD
-define(['jquery', 'com/goTop', 'com/rotation', 'com/newsFormate'], function($, goTop, rotation, newsFormate){
+//AMD
+define(['jquery', '../com/goTop', '../com/rotation', '../com/newsFormate', '../com/navFollow'], function($, goTop, rotation, newsFormate, navFollow){
 
-	new goTop($('body'), $('<div class="go-top">GO\nTOP</div>'))
+	new goTop($('body'), $('<div class="go-top">TOP</div>'))
 	new rotation($('.carousel'))
 	new newsFormate($('.news-container'), $('.news-container .news'), $('.news-container .btn'))
+	new navFollow($('body'))
 })
