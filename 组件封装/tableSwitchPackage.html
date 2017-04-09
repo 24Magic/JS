@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            tableSwitchPackage
+        </title>
+        <meta charset="utf-8">
+        </meta>
+        <style type="text/css">
+        	            li{
+        		list-style:none;
+        	}
+        	ul,li{
+        		margin: 0;
+        		padding: 0;
+        	}
+        	.clearfix:after {
+        		content:'';
+        		display:block;
+        		clear:both;
+        	}
+        	.container{
+        		width:600px;
+        		margin: 20px auto;
+        		padding: 40px;
+        		border: 1px solid #ccc;
+        		border-radius: 4px;
+                background-color: #212124;
+        	}
+
+        	.tab-head {
+        		border-bottom: 2px solid #ccc;
+        	}
+        	.tab-head>li{
+        		float: left;
+        		cursor: pointer;
+        		padding: 10px 20px;
+        		color: #fff;
+        		border-top: 2px solid #212124;
+        		border-left: 2px solid #212124;
+        		border-right: 2px solid #212124;
+        	}
+        	.tab-head .active{
+        		color: #ddd;
+        		margin-bottom: -2px;
+
+        		/*顺序不能换,需要后者覆盖前者*/
+        		border: 2px solid #fff;
+        		border-bottom-color: #212124;
+
+        		border-radius:4px 4px 0 0;
+        	}
+
+        	.tab-text{
+        		padding: 10px 0;
+        	}
+        	.tab-text>li{
+        		display:none;
+        	}
+        	.tab-text .active {
+        		display: block;
+                transition: all, .6s;
+        	}
+
+            .tab-text>li>img {
+                opacity: .8;
+                width: 600px;
+                height: 300px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <ul class="tab-head clearfix">
+                <li class="active">
+                    Tough
+                </li>
+                <li>
+                    Crimson
+                </li>
+                <li>
+                    Immature
+                </li>
+            </ul>
+            <ul class="tab-text clearfix">
+                <li class="active">
+                   <img src="https://ooo.0o0.ooo/2017/04/04/58e34d165a089.jpg">
+                </li>
+                <li>
+                    <img src="https://ooo.0o0.ooo/2017/04/04/58e34d2c23ce4.jpg">
+                </li>
+                <li>
+                    <img src="https://ooo.0o0.ooo/2017/04/04/58e34d330dd00.jpg">
+                </li>
+            </ul>
+        </div>
+
+         <div class="container">
+            <ul class="tab-head clearfix">
+                <li class="active">
+                    Appearance
+                </li>
+                <li>
+                    Castle
+                </li>
+                <li>
+                    Color
+                </li>
+            </ul>
+            <ul class="tab-text clearfix">
+                <li class="active">
+                    <img src="https://ooo.0o0.ooo/2017/04/04/58e345167c1b5.jpg">
+                </li>
+                <li>
+                    <img src="https://ooo.0o0.ooo/2017/04/04/58e3460f7dd6a.jpg">
+                </li>
+                <li>
+                    <img src="https://ooo.0o0.ooo/2017/04/04/58e34623ca514.jpg">
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+
+    var tab = (function(){
+        function Tab(container){
+            this.container = container;
+            this.init();
+            this.bind();   
+        }
+
+        //获取标题和内容的节点
+        Tab.prototype.init = function(){
+            this.tabList = this.container.querySelectorAll('.tab-head>li')
+            this.tabText = this.container.querySelectorAll('.tab-text>li')
+        }
+
+        //捆绑事件
+        Tab.prototype.bind = function(){
+            var _this = this
+            this.tabList.forEach(function(tabLi){
+                tabLi.onclick = function(e){
+
+                    //标题切换
+                    var target = e.target;
+                    var index = Array.prototype.indexOf.call(_this.tabList, target);
+
+                    _this.tabList.forEach(function(li){
+                        li.classList.remove('active');
+                    });
+                    target.classList.add('active');
+
+                    //对应内容切换
+                    _this.tabText.forEach(function(li){
+                        li.classList.remove('active')
+                    });
+                    _this.tabText[index].classList.add('active')
+                };
+            });
+        };
+
+        return {
+            start: function(containers){
+                containers.forEach(function(container){
+                    new Tab(container)
+                })
+            }  
+        }
+    })()
+
+    tab.start(document.querySelectorAll('.container'))
+        </script>
+    </body>
+</html>

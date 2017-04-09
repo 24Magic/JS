@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>新闻懒加载
+        </title>
+    </head>
+    <style type="text/css">
+        ul,li{
+			margin: 0;
+			padding: 0;
+		}
+		a{
+			text-decoration: none;
+		}
+		
+		.clearfix {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		.ct{
+			margin: 0 auto;
+			width: 600px;
+		}
+
+		.item a .thumb {
+			float: left;
+
+		}
+
+		.thumb img {
+			width: 50px;
+			height: 50px;
+		}
+
+		.item h2,
+		.item p {
+			margin-left: 60px;
+			font-size: 14px;
+			color: #000;
+		}
+
+		.item p {
+			margin-top: 10px;
+			color: #ccc;
+		}
+		.btn {
+			visibility: hidden;
+			height: 3px;
+		}
+
+    </style>
+    <body>
+    	<div class="ct">
+	    	<ul class="news clearfix">
+	        </ul>
+    	</div>
+        <button class="btn" href="#" id="load-more">
+            加载更多
+        </button>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+            var pageIndex = 0,
+            	isNewsArrive = true,
+            	isOver = false
+
+            //先执行一次加载
+            getNews();
+
+            //滚动事件
+            $(window).on('scroll', checkNews)
+
+        	//判断news的状态
+        	function checkNews(){
+        		if( isShow($('.btn')) && isNewsArrive && !isOver){
+        			getNews()
+        		}
+        	}
+		   
+        	//从后端获取news的数据
+		    function getNews(){
+		    	isNewsArrive = false
+		    	$.get('/getNews', {page: pageIndex}).done(function(ret){
+		    		isNewsArrive = true
+					if (ret.status === 0){
+						
+						pageIndex ++;
+					    appendHtml(ret.data);
+					    checkNews()
+					}else{
+						alert('数据错误')
+					}
+				}).fail(function(){
+					alert('系统异常')
+				})
+		    }
+
+	       //拼接html
+			function appendHtml(news){
+				if(news.length === 0){
+					isOver = true
+					$('.btn').remove()
+					$('.news').append('<p>没有更多数据了</p>')
+					return;
+				}
+				var htmls = ''
+				$.each(news, function(){
+					htmls += '<li class="item clearfix">';
+					htmls += '<a href="' + this.link + '">';
+					htmls += '<div class="thumb">';
+					htmls += '<img src="' + this.img + '">';
+					htmls += '</div><h2>' + this.title + '</h2>'
+					htmls += '<p>' + this.brif + '</p>'
+					htmls += '</a></li>'
+				})
+				$('.news').append(htmls)	
+			}
+
+			//判断图片是否出现在可视范围
+			function isShow($node){
+				var scrollTop = $(window).scrollTop(),
+				    windowHeight = $(window).height(),
+					offsetTop = $node.offset().top,
+					nodeHeight = $node.outerHeight()
+				if(offsetTop + nodeHeight> scrollTop && offsetTop < windowHeight + scrollTop){
+					return true
+				}else{
+					return false
+				}
+			}
+		</script>
+	</body>
+</html>
+
+
+

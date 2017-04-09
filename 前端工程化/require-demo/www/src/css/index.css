@@ -1,0 +1,868 @@
+	/*CSS reset*/
+
+html,
+body,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+
+}
+
+html,
+body {
+	height: 100%;
+	
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ol,
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+    font-weight: 700;
+}
+
+/* CSS common style*/
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+} 
+
+.layout {
+  min-width: 1140px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+	display: block;
+	padding: 100px 0;
+}
+
+.container {
+	width: 1140px;
+	margin: 0 auto;
+	padding: 15px 0;
+	
+}
+
+
+/*CSS Bootstrap */
+
+
+ #bootstrap {
+ 	position: fixed;
+ 	top: 0;
+ 	left: 0;
+ 	width: 100%;
+ 	padding: 10px 0;
+ 	padding-bottom: 15px;
+ 	font-weight: 700;
+ 	background-color: #000;
+ 	opacity: .9;
+ 	border: 1px solid;
+ 	z-index: 100;
+ }
+.navbar-container {
+	margin: 0;
+	padding: 0;
+}
+ .navbar {
+ 	overflow: hidden;
+ 	width: 650px;
+ 	margin-right: 0;
+ 	margin-left: auto;
+ 	margin-top: auto;
+ 	margin-bottom: auto;
+ }
+.navbar>li {
+ 	float: left;
+}
+.navbar a {
+	display: block;
+	color: #fff;
+	padding: 10px;
+	line-height: 20px;
+	font-size: 19px;
+ 	text-align: center;
+ 	font-weight: 600;
+ 	border-radius: 2px;	
+} 
+.navbar li .bgc {
+	background-color: #fed136;
+}
+.navbar a:hover {
+ 	color: #6ff;
+}
+
+
+#bootstrap .name {
+	float: left;
+	margin-left: 20px;
+}
+#bootstrap .name .name-top:hover {
+ 	opacity: .8;
+}
+#bootstrap .name .name-top {
+ 	color: #fed136;
+ 	font-style: italic;
+ 	font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+ 	font-size: 2.5em;
+ 	line-height: 1;
+ 	opacity: 1;
+}
+
+
+/*CSS HEADER*/
+
+#header {
+	height: 100%;
+	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/header-bg.jpg) center center no-repeat;
+    background-size: cover;
+	transition-property: background;
+	transition-duration: 2s;
+    -moz-transition-property: background; /* Firefox 4 */
+    -moz-transition-duration: 2s; /* Firefox 4 */
+    -webkit-transition-property: background; /* Safari and Chrome */
+    -webkit-transition-duration: 2s; /* Safari and Chrome */
+    -o-transition-property: background; /* Opera */
+    -o-transition-duration: 2s; /* Opera */
+}
+
+#header .container {
+	height: 100%;
+}
+
+.intro {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 880px;
+	height: 250px;
+	margin-left: -440px;
+	margin-top: -125px;
+	color: #fff;
+}
+
+.intro-lead-in {
+	font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-style: italic;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.intro-leading {
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 75px;
+    margin-bottom: 50px;
+}
+
+
+
+.panel {
+	display: inline-block;
+	padding: 20px 40px;
+	color: #fff;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 18px;
+	background-color: #fed136;
+	border-radius: 3px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-left: 330px;
+}
+.panel:hover {
+	margin-top: -3px;
+	opacity: 0.6;
+}
+
+/*CSS FOR SERVICES*/
+
+#services {
+	color: #4d4d4d;
+    background: #FFFFD9;
+}
+
+.section-head {
+	font-size: 40px;
+	text-align: center;
+}
+
+.section-description {
+	padding: 10px 0;
+	font-size: 18px;
+	font-style: italic;
+	text-align: center;
+	color: #ccc;
+}
+
+.text-center {
+	float: left;
+	width: 380px;
+	margin: 54px 0;
+}
+
+.text-center-head {
+	margin-bottom: 30px;
+	font-size: 22px;
+	text-align: center;
+}
+
+.text-center-content {
+	margin-bottom: 30px;
+	color: #666;
+	text-align: center;
+	opacity: .9;
+}
+
+
+
+
+
+.text-center .icons {
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 30px;	
+	border-radius: 50%;
+	background-color: #fed136;
+	}
+
+.icon {
+	font-family: "iconfont" !important;
+	font-size: 70px;
+	line-height: 50px;
+	color: #fff;
+	vertical-align: middle;
+	text-align: center;
+	padding: 25px 0;
+	width: 100px;
+	display: inline-block;
+}
+
+
+
+/*CSS PORTFOLIO*/
+
+#portfolio {
+	color: #e6e6e6;
+    background: #404040;
+}
+
+.card {
+	width: 360px;
+	float: left;
+	margin-left: 30px;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.container-card {
+	margin-left: -30px;
+	margin-top: 70px;
+}
+
+.card .text-center-p {
+	margin: 0;
+}
+
+.container-card li {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.19), 0 6px 20px 0 rgba(0,0,0,0.2);
+}
+
+.card .text-center-head {
+	color: #000;
+	margin-bottom: 0;
+	opacity: .7;
+	margin-top: 25px;
+	font-size: 25px;
+}
+
+.card .text-center-content {
+	color: #aaa;
+}
+
+.card-link {
+	display: block;
+	width: 360px;
+	height: 260px;
+	background-size: cover;
+}
+
+.background1 {
+	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png) center center no-repeat;
+}
+
+.background2 {
+	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/startup-framework.png) center center no-repeat;
+}
+
+.background3 {
+	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/treehouse.png) center center no-repeat;
+}
+
+.background4 {
+	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/golden.png) center center no-repeat;
+}
+
+.background5 {
+	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/escape.png) center center no-repeat;
+}
+
+.background6 {
+	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/dreams.png) center center no-repeat;
+}
+
+.card-link.hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(http://i1.piimg.com/567571/1a433d53ae24417d.png) center center no-repeat;
+
+	opacity: 0;
+}
+
+/*CSS ABOUT*/
+
+
+#about {
+	background: #1695A3;
+    color: #fff;
+}
+
+
+.a-container-about {
+	position: relative;
+	margin: 50px 15px;
+}
+
+.a-container:before {
+	position: absolute;
+	left: 42%;
+	margin-left: 84px;
+	top: 0;
+	bottom: 0;
+	content: '';
+	width: 2px;
+	background-color: #f1f1f1;
+
+}
+
+@media (min-width: 1200px)
+.a-container-about {
+    width: 100%;
+    float: left;
+}
+
+.a-container .a-container-list {
+	position: relative;
+	margin-bottom: 100px;
+	float: left;
+	
+}
+
+.a-container-h4,
+.a-container-text {
+	width: 41%;
+	text-align: right;
+	padding: 0 20px 20px 100px;
+}
+
+.a-container-h4 h4 {
+	line-height: 1.5;
+	font-size: 20px;
+}
+
+.a-container-text {
+	margin-top: -10px;
+}
+.a-container-text p {
+	line-height: 1.5;
+}
+
+.a-container-img {
+	position: absolute;
+	left: 42%;
+	top: 0;
+	width: 170px;
+	height: 170px;
+	text-align: center;
+	border: 5px solid #f1f1f1;
+	border-radius: 50%;
+	z-index: 10;
+
+}
+
+.a-container-img>img {
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+}
+
+.a-container .b .a-container-h4,
+.a-container .b .a-container-text {
+	text-align: left;
+	float: right;
+
+}
+
+.a-container .b .a-container-h4 {
+	margin-left: 82px;
+	padding-left: 17px;
+}
+
+.a-container .b .a-container-text {
+	margin-left: 78px;
+}
+
+ .a-container .b .a-container-text {
+	margin-right: -41%;
+	margin-top: 71px;
+}
+
+.a-container-list.c {
+	width: 1110px;
+	height: 50px;
+}
+
+.d::before {
+	content: '';
+	width: 100%;
+	display: block;
+}
+
+.a-container-list.c div {
+	position: absolute;
+	left: 42%;
+	top: 0;
+	background-color: #fed136;
+	text-align: center;
+
+}
+
+.a-container-list.c h3 {
+	padding: 42.5px 30px;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+/*CSS TEAM*/
+
+#team {
+	color: #4d4d4d;
+    background: #FFFFD9;
+}
+
+.team-list {
+	float: left;
+    width: 380px;
+    margin: 54px 0;
+}
+
+.team-img {
+	border: 7px solid #fff;
+	width: 239px;
+	height: 239px;
+	border-radius: 50%;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 24px;
+}
+
+.team-img img {
+	width: 225px;
+	height: 225px;
+	border-radius: 50%;
+}
+
+.text-center-t .text-center-head {
+	margin-bottom: 0;
+}
+
+
+
+.text-center-t {
+	margin: 0;
+}
+
+.about-text {
+	width: 1170px;
+	text-align: center;
+}
+
+.icon-t {
+	font-family: "iconfont" !important;
+	font-size: 45px;
+	line-height: 20px;
+	color: #000;
+	margin-right: 10px;
+}
+
+.icon-team a:first-child {
+	margin-left: 111px;
+}
+
+.icon-team {
+    float: left;
+    vertical-align: middle;
+    position: relative;
+    left: 0px;
+    top: -58px;
+    width: 380px;
+}
+
+
+
+.icon-t:hover {
+  color: #fed135;
+}
+
+
+
+
+/*CSS BRAND*/
+
+#brand {
+	color: #e6e6e6;
+    background: #fff;
+}
+
+.brand-content div {
+	float: left;
+	padding: 0 42.5px;
+}
+
+
+
+/*CSS CONTACT*/
+#contact {
+	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/map-image.png) center center no-repeat;
+    background-size: cover;
+    background-color: #404040;
+    padding-top: 60px;
+}
+
+#contact .container {
+	position: relative; 
+}
+
+#contact h2 {
+    color: #000;
+}
+
+#contact h3 {
+    color: #999;
+}
+
+.contact-form {
+  margin-top: 30px;
+}
+
+.contact-send {
+	margin: 0 456.5px;
+}
+
+.contact-send .panel {
+	margin-left: 0;
+}
+
+.contact-connection {
+	width: 540px;
+	margin-bottom: 30px;
+}
+.contact-form-connection input {
+	width: 100%;
+	height: auto;
+	padding: 20px;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 3px;
+	border: 1px solid #aaa;
+	font-size: 14px;
+}
+
+.contact-form-connection,
+.contact-form-textarea {
+	float: left;
+	
+}
+
+.contact-form-textarea {
+	margin-left: 30px;
+}
+
+.conact-form {
+	overflow: hidden;
+}
+
+.contact-form-textarea {
+	display: inline-block;
+	height: auto;
+	width: 540px;
+	height: 243px;
+}
+
+.contact-form-textarea textarea {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	color: #999!important;
+	padding: 20px;
+	overflow: auto;
+    -webkit-appearance: textarea;
+}
+
+/*CSS FOOTER */
+
+#footer {
+	padding: 10px 0;
+}
+
+.content-foo div {
+	float: left;
+	width: 380px;
+	text-align: center;
+}
+
+.content-foo a {
+	color: #fed136;
+	margin-right: 10px;
+}
+
+.content-foo a:hover {
+	text-decoration: underline;
+}
+
+.icon-foo a {
+    color: #000;
+}
+
+
+.icon-foo a:hover {
+    color: #fed136;
+    text-decoration: none;
+}
+
+.icon-t.linkedin {
+    font-size: 41px;
+}
+
+
+/*回到顶部*/
+.go-top{
+ 	position: fixed;
+	bottom: 12px;
+	right: 40px;
+	width: 75px;
+	height: 37px;
+
+	color: #FFFFD9;
+	text-align: center;
+	font-size: 18px;
+	line-height: 40px;
+	font-weight: 800;
+	
+	background: #fed136;
+	border-radius: 2px;
+	opacity: .9;
+	cursor: pointer;
+    display: none;
+ }
+
+/*新闻加载瀑布流 */
+#manynews {
+	background-color: #FFFFD9;
+}
+.news-container {
+	margin: 0 auto;
+	width: 1140px;
+	text-align: center;
+}
+.news-container .news {
+	position: relative;
+
+}
+
+.news-container .news .item{
+	position: absolute;
+	width: 265px;
+	margin: 10px;
+	margin-bottom: 30px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	transition: all .3s;
+	opacity: 0;
+	box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.25);
+}
+.news-container .news .item a {
+	display: block;
+	width: 245px;
+	margin: 10px;
+}
+.news-container .news .item a img {
+	width: 245px;
+	
+}
+.news-container .news .item h4 {
+	margin: 10px 0;
+	border-bottom: 1px solid #ccc;
+	height: 25px;
+}
+.news-container .news .item p {
+	color: #999;
+	font-size: 8px;
+	margin: 10px 0;
+}
+ .news-container .btn{
+ 	cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    border:#fff;
+    background-color: #6ff;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+ }
+
+ /*轮播*/
+ .carousel {
+		position: relative;
+		/*width: 1000px;
+		margin: 0 auto;*/
+		margin-bottom: 80px;
+		width: 100%;
+	}
+	.carousel-container {
+		position: relative;
+		/*height: 100%;*/
+		overflow: hidden;
+	}
+	.carousel-container .img-ct {
+		position: absolute;
+		/*width: 4000px;*/
+	}
+	.carousel-container .img-ct::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.carousel-container .img-ct li{
+		float: left;
+	}
+	/*.carousel-container .img-ct img {
+		width: 1000px;
+		height: 600px;
+	}*/
+
+	.btn-next,
+	.btn-pre{
+		position: absolute;
+		top: 50%;
+		margin-top: -35px;
+		width: 70px;
+		height: 70px;
+		color: #fff;
+		text-align: center;
+		border-radius: 50%;
+		background-color: #000;
+		opacity: .4;
+		display: block;
+	}
+	.btn-next p,
+	.btn-pre p {
+		font-size: 50px;
+		line-height: 70px;
+		font-weight: 600;
+		
+	}
+	.btn-next{
+		right: 0;
+	}
+
+	.bullet .item {
+		display: inline-block;
+		width: 42px;
+		height: 37px;
+		margin: 2px;
+		border-radius: 1px;
+		opacity: 0.5;
+	}
+	.bullet .item img {
+		width: 40px;
+		height: 35px;
+	}
+	.bullet .item.active {
+		border: 1px solid #fff;
+		opacity: 1;
+	}
+	.bullet-ct {
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+	.bullet {
+		display: inline-block;
+	}
+
+
+	/*icon */
+
+
+ @font-face {
+  font-family: 'iconfont';  /* project id 236226 */
+  src: url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.eot');
+  src: url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_d66e1d24lzzg2e29.svg#iconfont') format('svg');
+} 

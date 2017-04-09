@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>图片懒加载
+        </title>
+    </head>
+    <style type="text/css">
+    	body{
+    		background-color: #ccc;
+    	}
+		.image-container{
+			width: 870px;
+			margin: 0 auto;
+			background-color: #fff;
+		}
+		.image-container:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.image-container>img {
+			display: block;
+			float: left;
+			width: 238px;
+			height: 260px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-left: 40px;
+			border: 1px solid #ccc;
+			box-shadow: 1.5px 3px 5px 1px rgba(0,0,0,0.25);
+		}
+        .picture{
+            width: 1000px;
+            height: 700px;
+        }
+        .picture::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .picture .person {
+            position: relative;
+            top: 10%;
+            left: 20%;
+            width: 238px;
+            float: left;
+            opacity: 0;
+        }
+        .picture .person img {
+            width: 238px;
+            height: 260px;
+        }
+        #stagger {
+            position: relative;
+            height: 400px;
+            width: 880px;
+            margin: 20px auto;
+        }
+        
+        .box {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 6px;
+        }
+    </style>
+    <body>
+        <div id="stagger">
+
+            <div class="box"><img src="http://pic.qiantucdn.com/58pic/17/57/26/36H58PICZmD.jpg!qtwebp226"></div>
+            <div class="box"><img src="http://pic.qiantucdn.com/58pic/12/56/26/04m58PICZir.jpg!qtwebp226"></div>
+            <div class="box"><img src="http://pic.qiantucdn.com/58pic/17/55/99/53p58PICkGC.jpg!qtwebp226"></div>
+            <div class="box"><img src="http://pic.qiantucdn.com/uploadfilepic/shiliang/2009-03-02/58PIC_siyecao0717_200903026b9f1f98846d63b3.jpg!qtwebp226"></div>
+            <div class="box"><img src="http://pic.qiantucdn.com/58pic/13/84/37/82m58PIC8Gj.jpg!qtwebp226"></div>
+            <div class="box"><img src="http://pic.qiantucdn.com/58pic/12/56/25/66W58PICrca.jpg!qtwebp226"></div>
+            <div class="box"><img src="http://pic.qiantucdn.com/58pic/17/68/91/86558PIC2VH.jpg!qtwebp226"></div>
+            <div class="box"><img src="http://pic.qiantucdn.com/58pic/12/56/21/63I58PICk36.jpg!qtwebp226"></div>
+        
+        </div>
+        <div class="image-container">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/17/57/26/36H58PICZmD.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/26/04m58PICZir.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/17/55/99/53p58PICkGC.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/uploadfilepic/shiliang/2009-03-02/58PIC_siyecao0717_200903026b9f1f98846d63b3.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/13/84/37/82m58PIC8Gj.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/66W58PICrca.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/17/68/91/86558PIC2VH.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/63I58PICk36.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/60r58PIC5FJ.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/58258PICWrC.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/61Y58PICmKd.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/88v58PIC2QE.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/26/01w58PIC2pi.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/58PIC58PICN58PIC3Za.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/26/23/19/58c95ac46c065.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/67P58PICdVQ.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/58w58PICfz4.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/56C58PICZzF.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/63z58PICunW.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/26/19K58PICbA3.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/25/53m58PICnQa.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/87G58PICWDg.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/17/62/78/43q58PIC7tX.jpg!qtwebp226">
+        	<img src="http://pic.qiantucdn.com/58pic/19/53/03/56e641c7954a4.jpg!qtwebp226" data-src="http://pic.qiantucdn.com/58pic/12/56/21/62X58PICh4G.jpg!qtwebp226">
+
+        </div>
+        <div class="picture">
+            <div class="person"><img src="http://pic.qiantucdn.com/58pic/13/84/37/82m58PIC8Gj.jpg!qtwebp226"></div>
+        </div>
+        
+
+       <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+       <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <script type="text/javascript">
+
+    var lazyLoading = (function(){
+        function Exposure($target, callback){
+            this.$target = $target
+            this.callback = callback
+            this.hasDone = false
+            this.bind()
+            this.check()
+        }
+
+        Exposure.prototype.bind = function(){
+            var _this = this
+            if( !this.hasDone ){
+                $(window).on('scroll', function(){
+                    _this.check()
+                })
+                this.hasDone = true
+            }
+            if( !this.isShow(this.$target)){
+                this.hasDone = false
+            }
+            
+        }
+       
+        Exposure.prototype.check = function(){
+            if( this.isShow(this.$target) ){
+                this.callback(this.$target)
+            }
+        }
+
+        Exposure.prototype.isShow = function(){
+            
+            var scrollTop = $(window).scrollTop(),
+                windowHeight = $(window).height(),
+                offsetTop = this.$target.offset().top,
+                nodeHeight = this.$target.outerHeight()
+
+            if(offsetTop + nodeHeight> scrollTop && offsetTop < windowHeight + scrollTop){
+                return true
+            }else{
+                return false
+            }   
+        }
+
+        Exposure.prototype.showImage = function($image){
+            var imgUrl = $image.attr('data-src')
+            $image.attr('src',imgUrl)
+            $image.addClass('load')
+        }
+
+        return {
+            start: function($targets, callback){
+                $targets.each(function(index, item){
+                    new Exposure($(item), callback)
+                })
+            }
+        }
+    })()
+
+    lazyLoading.start($('.picture .person'), function($node){
+        $node.animate({left: '+=70%',opacity: .6},500)
+        $node.animate({top: '+=40%',opacity: 1},500)
+        $node.animate({left: '-=70%',opacity: .4},500)
+        $node.animate({top: '-=40%',opacity: 0},500)
+        $node.animate({top: '+=40%',opacity: .4},500)
+        $node.animate({left: '+=70%',opacity: 1},500)
+        $node.animate({top: '-=40%',opacity: .6},500)
+        $node.animate({left: '-=70%',opacity: 0},500)
+        console.log(3)
+    })  //无限加载
+
+    lazyLoading.start($('#stagger .box'), function($node){
+        TweenMax.staggerTo($node, 1, {rotation:360, y:300}, 1);
+        setTimeout(function(){
+            TweenMax.staggerTo($node, 1, {rotation:-360, y:0}, 1);
+        }, 3000)
+        console.log(2)
+    })
+        
+    lazyLoading.start($('.image-container img'), function($node){
+        if(!$node.hasClass('load')){
+            setTimeout(function(){
+                this.showImage($node)
+            }.bind(this), 600)
+        }  //加载一次
+    })
+
+    
+		</script>
+	</body>
+</html>
+
