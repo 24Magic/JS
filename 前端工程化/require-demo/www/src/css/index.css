@@ -775,11 +775,11 @@ section {
  }
 
  /*轮播*/
- .carousel {
-		position: relative;
-		
-		margin-bottom: 80px;
-		width: 100%;
+.carousel {
+	position: relative;	
+	margin-bottom: 80px;
+	/*width: 100%;*/
+	margin: 0 auto;
 	}
 	.carousel-container {
 		position: relative;
@@ -851,7 +851,6 @@ section {
 	.bullet {
 		display: inline-block;
 	}
-
 
 
 /*@font-face {
