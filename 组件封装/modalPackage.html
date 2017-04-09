@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            modal封装
+        </title>
+        <meta charset="utf-8">
+        <style type="text/css">
+        .btn {
+          cursor: pointer;
+          padding: 10px 20px;
+          font-size: 20px;
+          color: #fff;
+          outline: none;
+          margin-bottom: 10px;
+          border:#fff;
+          background-color: #6ff;
+          box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+        }
+        .box{
+    			position:absolute;
+    			left:50%;
+    			top:50%;
+    			margin-left:-150px;
+    			margin-top:-100px;
+    			width:300px;
+    			height:200px;
+    			background-color:#fff;
+    			box-shadow: 1.5px 3px 5px 1px rgba(0,0,0,0.25);
+          border: 0.5px solid #eee;
+          border-radius: 2px;
+    			display:none;
+    		}
+        .title {
+          padding-left: 5px; 
+        }
+    		.title .x{
+    		  position: absolute;
+          top: -2px;
+          right:-2px;
+    			float: right;
+    			margin-right:10px;
+    			font-weight: 300;
+    			font-size: 22px;
+          cursor:pointer;
+    		}
+        .title .txt{
+          font-weight: 500;
+          font-size: 15px;
+        }
+        .box .btn-n {
+          position: absolute;
+          left: 68%;
+          bottom: 5%;
+          display: inline-block;
+        }
+        .btn-n .determin,
+        .btn-n .cancel {
+          border: #fff;
+          cursor: pointer;
+          background-color: #fff;
+          outline: none;
+        }
+        .text {
+          margin-bottom: 30px;
+        }
+        .text p {
+          padding: 5px;
+          font-size: 13px;
+        }
+        .text-other {
+          font-size:4px;
+          color: #666;
+          margin-bottom: -10px
+        }
+      </style>
+    </head>
+    <body>
+    <div class="modal">
+      <button class="btn">
+            CLICK
+      </button>
+      <div class="box">
+            <div class="btn-n">
+                <button class="determin">
+                    确定
+                </button>
+                <button class="cancel">
+                    取消
+                </button>
+            </div>
+            <div class="title">
+              <div class="x">
+                x
+              </div>
+              <p class="txt">
+                我是标题
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                我是内容1
+              </p>
+              <p>
+                我是内容2
+              </p>
+            </div>
+            
+            <input class="ipt" type="checkbox">
+                <span class="text-other">
+                    不再显示此对话框
+                </span>
+            </input>
+      </div>
+    </div>
+      <div class="modal">
+      <button class="btn">
+            CLICK
+      </button>
+      <div class="box">
+            <div class="btn-n">
+                <button class="determin">
+                    确定
+                </button>
+                <button class="cancel">
+                    取消
+                </button>
+            </div>
+            <div class="title">
+              <div class="x">
+                x
+              </div>
+              <p class="txt">
+                我是标题
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                我是内容1
+              </p>
+              <p>
+                我是内容2
+              </p>
+            </div>
+            
+            <input class="ipt" type="checkbox">
+                <span class="text-other">
+                    不再显示此对话框
+                </span>
+            </input>
+      </div>
+    </div>
+      <script src="./jquery.min.js"></script>
+      <script type="text/javascript">
+      
+      var modal = (function(){
+      function ModalShow($targets, $element, callback){
+        this.$targets = $targets
+        this.$element = $element
+        this.callback = callback
+        this.init()
+        this.bind()
+      }
+
+      ModalShow.prototype.init = function(){
+        console.log(this.$element)
+        var $xxx =this.$xxx = this.$element.find('.title .x')
+        var $btnDetermin =this.$btnDetermin = this.$element.find('.btn-n .determin')
+        var $btnCancel =this.$btnCancel  = this.$element.find('.btn-n .cancel ')
+      }
+      
+      ModalShow.prototype.bind = function(){
+
+          var _this = this
+        
+          this.$targets.on('click',function(e){
+            _this.$element.show()
+
+          //阻止向外冒泡使全局都是'none'的属性
+            e.stopPropagation()
+          })
+
+          $(window).on('click', function(){
+            _this.$element.hide()
+          })
+
+          this.$element.on('click', function(e){
+            //阻止'none'冒泡到box导致点击box消失
+            e.stopPropagation()
+          })
+
+          this.$xxx.on('click',function(){
+            _this.$element.hide()
+          })
+
+          this.$btnDetermin.on('click',function(){
+            _this.$element.hide()
+            if(_this.callback){
+              _this.callback()
+            }
+            
+            $(this).css('border', '#fff')
+          })
+
+          this.$btnCancel.on('click',function(){
+            _this.$element.hide()
+            if(_this.callback){
+              _this.callback()
+            }
+            $(this).css('border', '#fff')
+          })
+
+      ModalShow.prototype.isShow = function(e){
+        _this.$element.show()
+
+          //阻止向外冒泡使全局都是'none'的属性
+        e.stopPropagation()
+      } 
+
+     
+         
+      }
+        return {start: function($targets, $element, callback){
+              new ModalShow($targets, $element, callback)
+            }
+        }
+
+        
+      })()
+
+      
+      
+      modal.start($('.modal .btn'), $('.modal .box'), function(){
+        alert('You hear me ?')
+      })
+				
+		
+        </script>
+    </body>
+</html>
