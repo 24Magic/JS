@@ -1,0 +1,19 @@
+{
+  "name": "mike-weather",
+  "version": "1.0.3",
+  "description": "ok",
+  "main": "index.js",
+  "bin": {
+    "weather": "./index.js"
+  },
+  "scripts": {
+    "start": "echo start...",
+    "build": "echo build...",
+    "test": "echo\"Error: no test specifed\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.1"
+  }
+}
