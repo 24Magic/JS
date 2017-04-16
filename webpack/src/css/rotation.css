@@ -1,0 +1,73 @@
+/*轮播*/
+.carousel {
+	position: relative;	
+	margin-bottom: 80px;
+	margin: 0 auto;
+}
+.carousel-container {
+	position: relative;
+	overflow: hidden;
+}
+.carousel-container .img-ct {
+	position: absolute;
+}
+.carousel-container .img-ct::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.carousel-container .img-ct li{
+	float: left;
+}
+	
+
+.btn-next,
+.btn-pre{
+	position: absolute;
+	top: 50%;
+	margin-top: -35px;
+	width: 70px;
+	height: 70px;
+	color: #fff;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #000;
+	opacity: .4;
+	display: block;
+}
+.btn-next p,
+.btn-pre p {
+	font-size: 50px;
+	line-height: 70px;
+	font-weight: 600;	
+}
+.btn-next{
+	right: 0;
+}
+
+.bullet .item {
+	display: inline-block;
+	width: 42px;
+	height: 37px;
+	margin: 2px;
+	border-radius: 1px;
+	opacity: 0.5;
+}
+.bullet .item img {
+	width: 40px;
+	height: 35px;
+}
+.bullet .item.active {
+	border: 1px solid #fff;
+	opacity: 1;
+}
+.bullet-ct {
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+.bullet {
+	display: inline-block;
+}
