@@ -1,0 +1,63 @@
+/*新闻加载瀑布流 */
+#manynews {
+	background-color: #FFFFD9;
+}
+.news-container {
+	margin: 0 auto;
+	width: 1140px;
+	text-align: center;
+}
+.news-container .news {
+	position: relative;
+
+}
+
+.news-container .news .item{
+	position: absolute;
+	width: 265px;
+	margin: 10px;
+	margin-bottom: 30px;
+	background-color: #FFFFD9;
+	transition: all .3s;
+	opacity: 0;
+	box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+}
+.news-container .news .item a {
+	display: block;
+	text-align: center;
+	width: 265px;
+	margin: 0px;
+}
+.news-container .news .item a img {
+	width: 265px;
+	
+}
+.news-container .news .item h4 {
+	display: inline-block;
+	width: 245px;
+	margin: 10px 0;
+	padding-bottom: 10px;
+	font-size: 17px;
+	line-height: 25px;
+	border-bottom: 1px solid #ccc;
+}
+.news-container .news .item p {
+	display: inline-block;
+	width: 245px;
+	color: #666;
+	font-size: 14px;
+	margin: 0 0 10px 0;
+}
+ .news-container .btn{
+ 	cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    border:#fff;
+    background-color: #6ff;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+ }
