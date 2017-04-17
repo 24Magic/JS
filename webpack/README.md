@@ -81,6 +81,8 @@ Yarn的改进：
 *yarn install*
 - `npm install` 命令安装的是 `package.json` 中的依赖，如果开发者在 `package.json` 中添加了新的依赖，`npm install` 也一样安装。然而，`yarn install` 会优先安装 `yarn.lock` 中记录的依赖，没有这样的锁定文件时，才会去安装 `package.json` 中的依赖。
 
+[参考地址](http://qianduan.guru/2016/11/09/yarn-vs-npm/)
+
 **6.** 
 **webpack是什么？**
 
