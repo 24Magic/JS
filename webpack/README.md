@@ -4,7 +4,7 @@
 ```npm install -g abc```
 
 **2.**
-** package.json 有什么作用？**
+**package.json 有什么作用？**
 
 npm上发布包时，需要package.json中的信息来描述这个包,并提供包所需要的依赖
 ```
@@ -29,7 +29,7 @@ npm上发布包时，需要package.json中的信息来描述这个包,并提供�
   }  //依赖
 ```
 **3.**
-** npm install --save app 与 npm install --save-dev app有什么区别?**
+**npm install --save app 与 npm install --save-dev app有什么区别?**
 
 npm install --save app: 保存需要加载的依赖的信息到package.json里面,该模块使用时，该依赖被调用
 ```
@@ -49,11 +49,11 @@ npm install --save-dev app: 开发测试时使用的依赖，当需要测试时�
 该模块的同级目录下查找nodule_modules  =>  if(没有) 向上一级查找  =>  if(没有) 再向上一级 ...=> 直到找到根目录下
 
 **5.**
-** npm3与 npm2相比有什么改进？**
+**npm3与 npm2相比有什么改进**
 
 假设A,C依赖B，npm2会把两个不同版本的B各自放在A，C下面；npm3会把相同版本的B放在与A,C同一目录下，而把不同版本的B放在C下面
 
-![npm3deps4.png](http://upload-images.jianshu.io/upload_images/4597520-071159eca01906b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![npm2npm3.png](./src/imgs/npm2npm3.png)
 
 **yarn和 npm 相比有什么优势?**
 npm存在的缺陷：
@@ -93,7 +93,7 @@ Yarn的改进：
 可以自定义打包逻辑的能力
 适合大项目，无论是单页还是多页的 Web 应用
 
-**和其他同类型工具比有什么优势？**
+**和其他同类型工具比有什么优势**
 web pack的优势：
 1.代码拆分
 Webpack 有两种组织模块依赖的方式，同步和异步。异步依赖作为分割点，形成一个新的块。在优化了依赖树后，每一个异步区块都作为一个文件被打包。
@@ -111,7 +111,7 @@ Webpack 还有一个功能丰富的插件系统。大多数内容功能都是基
 Webpack 使用异步 I/O 和多级缓存提高运行效率，这使得 Webpack 能够以令人难以置信的速度快速增量编译。
 
 **7.**
-**npm script是什么？**
+**npm script是什么**
 在package.json中存在scripts，可以执行自定义命令
 下面是常用的自定义命令行：
 ```
@@ -140,7 +140,7 @@ Webpack 使用异步 I/O 和多级缓存提高运行效率，这使得 Webpack �
   }
 }
 ```
-**如何使用？**
+**如何使用?**
 
 ```
 //在npm中有默认命令名称的
@@ -154,7 +154,7 @@ npm run css:scss
 [demo](https://24magic.github.io/JS/webpack2/src/index.html)
 
 **9.**
-**gulp是什么？**
+**gulp是什么?**
 - 它是一款nodejs应用。
 - 它是打造前端工作流的利器，打包、压缩、合并、git、远程操作...，
 - 简单易用
@@ -232,5 +232,5 @@ npm run css:scss
  */
 ```
 **10.** 
-**开发一个 node 命令行天气应用用于查询用户当前所在城市的天气，发布到 npm 上去。可以通过如下方式安装使用(可使用api.jirengu.com里提供的查询天气接口) **
+**开发一个 node 命令行天气应用用于查询用户当前所在城市的天气，发布到 npm 上去。可以通过如下方式安装使用(可使用api.jirengu.com里提供的查询天气接口)**
 [npm地址](https://www.npmjs.com/package/mike-weather)
