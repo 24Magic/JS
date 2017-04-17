@@ -1,9 +1,5 @@
 
 
-var module = require('./module.js')
-console.log('ok')
-console.log(module)
-
 require('./src/css/reset.css')
 require('./src/css/common.css')
 require('./src/css/index.css')  //载入css
