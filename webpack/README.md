@@ -44,7 +44,7 @@ npm上发布包时，需要package.json中的信息来描述这个包
 }
 ``` 
 
-**4.**nodule_modules的查找路径是怎样的?
+**4.** nodule_modules的查找路径是怎样的?
 
 该模块的同级目录下查找nodule_modules  =>  if(没有) 向上一级查找  =>  if(没有) 再向上一级 ...=> 直到找到根目录下
 
@@ -66,7 +66,8 @@ npm上发布包时，需要package.json中的信息来描述这个包
 - 可以自定义打包逻辑的能力
 - 适合大项目，无论是单页还是多页的 Web 应用
 
-web pack的优势：
+webpack的优势：
+
 1.代码拆分
 Webpack 有两种组织模块依赖的方式，同步和异步。异步依赖作为分割点，形成一个新的块。在优化了依赖树后，每一个异步区块都作为一个文件被打包。
 
@@ -82,7 +83,7 @@ Webpack 还有一个功能丰富的插件系统。大多数内容功能都是基
 5.快速运行
 Webpack 使用异步 I/O 和多级缓存提高运行效率，这使得 Webpack 能够以令人难以置信的速度快速增量编译。
 
-**7.**npm script是什么？如何使用？
+**7.** npm script是什么？如何使用？
 
 在package.json中存在scripts，可以执行自定义命令
 下面是常用的自定义命令行：
@@ -126,7 +127,7 @@ npm run css:scss
 [代码](https://github.com/24Magic/JS/tree/master/webpack2)
 [demo](https://24magic.github.io/JS/webpack2/src/index.html)
 
-**9.**gulp是什么？使用 gulp 实现图片压缩、CSS 压缩合并、JS 压缩合并
+**9.** gulp是什么？使用 gulp 实现图片压缩、CSS 压缩合并、JS 压缩合并
 
 - 它是一款nodejs应用。
 - 它是打造前端工作流的利器，打包、压缩、合并、git、远程操作...，
