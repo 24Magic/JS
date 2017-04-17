@@ -4,7 +4,7 @@
 ```npm install -g abc```
 
 **2.**
-**package.json 有什么作用？**
+**package.json 有什么作用?**
 
 npm上发布包时，需要package.json中的信息来描述这个包,并提供包所需要的依赖
 ```
@@ -22,11 +22,12 @@ npm上发布包时，需要package.json中的信息来描述这个包,并提供�
     "test": "echo\"Error: no test specifed\" && exit 1" //直接执行特定命令行
   },
   "author": "",  //作者
-  "license": "ISC"  //版权
-}
+  "license": "ISC",  //版权
   "dependencies": {
     "webpack": "^2.4.1"
   }  //依赖
+}
+  
 ```
 **3.**
 **npm install --save app 与 npm install --save-dev app有什么区别?**
