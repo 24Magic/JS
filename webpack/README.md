@@ -163,9 +163,9 @@ npm run css:scss
 **8.** 
 **使用 webpack 替换 入门-任务15中模块化使用的 requriejs**
 
-[代码](https://github.com/24Magic/JS/tree/master/webpack2)
+[代码](https://github.com/24Magic/JS/tree/master/webpack)
 
-[demo](https://24magic.github.io/JS/webpack2/src/index.html)
+[demo](https://24magic.github.io/JS/webpack/src/index.html)
 
 **9.**
 **gulp是什么?**
