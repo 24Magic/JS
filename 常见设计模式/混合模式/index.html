@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	var person = (function(){
+		function People(target){
+			this.target = target
+			this.sayHello()
+
+		}
+		People.prototype.sayHello = function(){
+			var _this = this
+			var names = ['John', 'Mike']
+			names.map(function(item){
+				console.log(item)
+				debugger
+				_this.target.innerText = 'Hello' + item
+			})
+		}
+		return {
+			init: function(target){
+				new People(target)
+			}
+		}
+	})()
+	var body = document.querySelector('body')
+	person.init(body)
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="example1"></div>
+<div class="example2"></div>
+<script>
+	var people = (function(){
+
+		var instance
+
+		function init(name, target){
+			console.log(name)
+			debugger
+			target.innerText = 'Hello ' + name + '!'
+			return {
+				init: init
+			}
+		}
+
+		return {
+			createPeople: function(name, target){
+				if (!instance){
+					instance = init(name, target)
+				}
+				return instance
+			}
+		}
+
+	})()
+
+	var example1 = document.querySelector('.example1')
+	var example2 = document.querySelector('.example2')
+	var person1 = people.createPeople('Mike', example1)
+	var person2 = people.createPeople('John', example2)
+	//person1 === person2 === Object{init: function}
+</script>
+</body>
+</html>

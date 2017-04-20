@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	function createPerson(name, target){
+		var people = {
+			name: name
+		}
+		people.sayHello = function() {
+			target.innerText = 'Hello' + this.name
+		}
+		return people
+	}
+
+	var body = document.querySelector('body')
+	var person = createPerson( 'Mike', body)
+	
+	console.log(person) //Object {name: "Mike", sayHello: function}
+	person.sayHello()
+</script>
+</body>
+</html>

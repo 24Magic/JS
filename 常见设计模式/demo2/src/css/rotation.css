@@ -1,0 +1,87 @@
+.carousel {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.carousel .img-ct {
+    position: absolute;
+    width: 2400px;
+}
+
+.carousel .img-ct::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.carousel .img-ct li {
+    float: left;
+}
+
+.carousel .img-ct img {
+    width: 600px;
+    height: 300px;
+}
+
+.btn-next, .btn-pre {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border: 3px solid #fff; 
+    display: block;
+}
+
+.btn-next p, .btn-pre p {
+    margin: -1px 0 0 0;
+    color: #fff;
+    vertical-align: middle;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+
+}
+/*.btn-next:hover, .btn-pre:hover,*/
+.btn-next p:hover, .btn-pre p:hover {
+    color: #f06d6a;
+    border-color: #f06d6a;
+}
+
+.btn-next {
+    right: 0;
+}
+
+.carousel .bullet li {
+    display: inline-block;
+    width: 24px;
+    height: 8px;
+    margin: 0 8px;
+    background-color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.carousel .bullet-ct {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.carousel .bullet {
+    width: 200px;
+    display: inline-block;
+}
+
+.carousel .bullet .active {
+    background-color: #212124;
+}

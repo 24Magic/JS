@@ -1,0 +1,50 @@
+.container {
+    width: 600px;
+    margin: 20px auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #212124;
+}
+
+.tab-head {
+    border-bottom: 2px solid #ccc;
+}
+
+.tab-head>li {
+    float: left;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #fff;
+    border-top: 2px solid #212124;
+    border-left: 2px solid #212124;
+    border-right: 2px solid #212124;
+}
+
+.tab-head .active {
+    color: #ddd;
+    margin-bottom: -2px;
+    /*顺序不能换,需要后者覆盖前者*/
+    border: 2px solid #fff;
+    border-bottom-color: #212124;
+    border-radius: 4px 4px 0 0;
+}
+
+.tab-text {
+    padding: 10px 0;
+}
+
+.tab-text>li {
+    display: none;
+}
+
+.tab-text .active {
+    display: block;
+    transition: all, .6s;
+}
+
+.tab-text>li>img {
+    opacity: .8;
+    width: 600px;
+    height: 300px;
+}

@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	function People(target) {
+		this.target = target
+		this.sayHello()
+	}
+
+	People.prototype.sayHello = function() {
+		this.target.innerText = 'Hello World!'
+	}
+	
+	var body = document.querySelector('body')
+	var person = new People(body)
+</script>
+</body>
+</html>
+
+

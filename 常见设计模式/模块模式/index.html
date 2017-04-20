@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	var people = (function(){
+		var names = ['John', 'Mike']
+		return {
+			init: function(target){
+				names.map(function(name){
+					console.log(name)
+					debugger
+					return target.innerText = 'Hello ' + name 
+				}) 
+			}
+		}
+	})()
+	var body = document.querySelector('body')
+	people.init(body)
+</script>
+</body>
+</html>
