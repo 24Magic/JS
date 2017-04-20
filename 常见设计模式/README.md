@@ -16,4 +16,4 @@
 
 [demo](https://24magic.github.io/JS/%E5%B8%B8%E8%A7%81%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/demo2/dist/index.html)
 
-[代码地址](demo2/src)
+[代码地址](demo2)
