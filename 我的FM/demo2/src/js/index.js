@@ -516,7 +516,7 @@ var music = (function() {
             if (_this.isLoad_) return
             _this.isLoad_ = true
             ajax.init({
-                url: 'http://api.jirengu.com/fm/getChannels.php',
+                url: 'https://api.jirengu.com/fm/getChannels.php',
                 dataType: 'json',
                 type: 'get',
                 success: function(ret) {
@@ -545,7 +545,7 @@ var music = (function() {
             _this.isLoad = true
             var channelId = _this.styleNode.getAttribute('data-channel-id')
             ajax.init({
-                url: 'http://api.jirengu.com/fm/getSong.php',
+                url: 'https://api.jirengu.com/fm/getSong.php',
                 dataType: 'json',
                 type: 'get',
                 data: {
