@@ -530,8 +530,18 @@ var music = (function() {
                 },
                 error: function() {
                     let channel = '你不小心进入了奇怪的歌曲类别中'
+                    
+                    
+                    let title = '这不是一首歌，手动下一首'
+                    let lrc = '<li>巴拉巴拉能量不足啦::>_<::</li>'
+
                     // _this.curMusic.channel = channel
+                    // _this.curMusic.title = title
+                    // _this.curMusic.lrc = ''
                     _this.styleNode.innerText = channel
+                    _this.titleNode.innerText = title
+                    _this.lrcContent.innerHTML = lrc
+                    _this.lrcContent.querySelector('li').style.opacity = 1
                     _this.isLoad_ = false
                 }
             })
