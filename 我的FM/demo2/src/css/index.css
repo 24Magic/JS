@@ -1,0 +1,384 @@
+
+#music {
+    width: 495px;
+    margin: 0 auto;
+    cursor: default;
+}
+
+/*container css*/
+#music .container {
+    position: relative;
+    background-color: #fff;
+    opacity: .9;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    z-index: 2;
+}
+
+#music .container:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* image css*/
+
+#music .image,
+#music .content,
+#music .button,
+#music .line-time_container
+ {
+    float: left;
+    margin-left: 10px;
+}
+
+#music .image {
+    width: 112px;
+    height: 112px;
+    margin:  0;
+}
+
+/*content css*/
+#music .content {
+    width: 365px;
+}
+
+#music .content .style {
+    font-size: 15px;
+}
+
+#music .content>p {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#music .title {
+    margin: 2px 0 0 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+#music .author {
+    margin: 2px 0 0 0;
+    text-align: center;
+    font-size: 12px;
+    opacity: .5;
+}
+
+/*lrc css*/
+#music .lrc {
+    position: relative;
+    height: 19px;
+    padding: 0 4px 8px 0;
+    border: 1px solid #fff;
+    font-size: 12px;
+    overflow: hidden;
+    /*box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, .1);*/
+}
+
+#music .lrc-content {
+    position: absolute;
+    top: 0;
+    width: 365px;
+    text-align: center;
+}
+
+#music .lrc .lrc-content li {
+    white-space: pre;
+    height: 16px;
+    color: #404040;
+    opacity: .4;
+}
+
+/*time-volume-loop css*/
+#music .time-volume-loop {
+    position: absolute;
+    top: -6px;
+    right: -114px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+#music .time-volume-loop>div {
+    float: left;
+}
+
+#music .time-volume-loop::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*volume css*/
+#music  div.volume {
+    position: relative;
+    top: -33px;
+    height: 45px;
+    margin: 0 5px;
+    width: 10px;
+    opacity: .5;
+}
+
+#music  div.volume .iconfont {
+    font-size: 12px;
+}
+
+#music  div.vol {
+    position: absolute;
+    bottom: 0;
+}
+
+#music  div.volume:hover {
+    opacity: 1;
+}
+
+#music div.volume .volume-panel {
+    position: relative;
+    height: 30px;
+    left: 2px;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+}
+
+#music div.volume .volume-panel .volume-line {
+    width: 6px;
+    height: 30px;
+    background-color: #404040;
+    z-index: 1;
+}
+
+#music div.volume .volume-panel .volume-change {
+    position: absolute;
+    bottom: 0;
+    width: 6px;
+    background-color: #f06d6a;
+    opacity: .9;
+}
+
+#music div.volume .volume-panel .volume-change .volume-rectangle {
+    position: absolute;
+    top: 0;
+    right: -3px;
+    width: 12px;
+    height: 6px;
+    margin-top: -3px;
+    background-color: #f06d6a;
+    opacity: .9;
+}
+
+/*loop css*/
+#music  div.loop {
+    opacity: .5;
+}
+
+#music div.loop .iconfont {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#music  div.loop:hover {
+    opacity: 1;
+}
+
+#music .line-time {
+    position: relative;
+    cursor: pointer;
+    margin: 7px 0;
+}
+
+#music .line-time .time {
+    opacity: .5;
+    cursor: default;
+}
+
+#music .line {
+    width: 250px;
+    height: 3px;
+    background-color: #404040;
+    opacity: .5;
+    z-index: 1000;
+}
+
+#music .line-now {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: #f06d6a;
+    opacity: .9;
+}
+
+#music .line-now .circle {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border: 1px solid #f06d6a;
+    border-radius: 50%;
+    opacity: .9;
+    z-index: 100;
+}
+
+
+/*musci-button css*/
+#music .button {
+    width: 365px;
+}
+
+#music .button-container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#music .button-container div.play-double,
+#music .button-container div.play,
+#music .button-container div.next {
+    float: left;
+    margin-right: 14px;
+    cursor: pointer;
+}
+
+#music .button-container div.play {
+    width: 15px;
+}
+
+#music .play-double .iconfont,
+#music .play .fa,
+#music .next .fa {
+    color: #404040;
+    opacity: .5;
+}
+
+#music .play-double .iconfont:hover,
+#music .play .fa:hover,
+#music .next .fa:hover {
+    opacity: .9;
+}
+
+#music .prefer .iconfont {
+    font-size: 22px;
+    color: #f06d6a;
+    opacity: .9;
+}
+
+#music .list .iconfont {
+    font-size: 12px;
+}
+
+#music .button-container div.prefer,
+#music .button-container div.list {
+    float: right;
+    cursor: pointer;
+}
+
+#music .button-container div.prefer {
+    margin-right: 96px;
+    margin-top: -2px;
+}
+
+#music .button-container div.list{
+    margin-top: -3px;
+    margin-right: 2px;
+    opacity: .5;
+}
+
+#music .button-container div.list:hover {
+    opacity: .9;
+}
+
+/*music-list css*/
+#music .music-list-container {
+    display: none;
+    height: 108px;
+}
+
+#music .music-list-container.block {
+    display: block;
+}
+
+#music .music-list-container .music-list li {
+    position: relative;
+}
+
+#music .music-list-container .music-list li::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#music .music-list-container .music-list li:hover {
+    background-color: #eee;
+}
+
+#music .music-list-container .music-list li .point {
+    width: 495px;
+    height: 37px;
+    background-color: #eee;
+    display: none;
+}
+
+#music .music-list-container .music-list li .point.active {
+    position: absolute;
+    display: block;
+}
+
+#music .music-list-container .music-list li .active::before {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    content: '';
+    display: block;
+    width: 3px;
+    height: 23px;
+    background-color: #f06d6a;
+}
+
+#music .music-list-container .music-list li {
+    font-size: 12px;
+}
+
+#music .music-list-container .music-list li::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#music .music-list-container .music-list li .number {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    opacity: .5;
+}
+
+#music .music-list-container .music-list li .front {
+    float: left;
+    margin: 10px 0 10px 30px;
+    opacity: .9;
+}
+
+#music .music-list-container .music-list li .behind {
+    float: right;
+    text-align: right;
+    margin: 10px 30px 10px 0;
+    opacity: .5;
+}
+
+#music .music-list-container .music-list li .delete {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: .7;
+    cursor: pointer;
+}
+
+#music .music-list-container .music-list li .delete:hover {
+    opacity: 1;
+}
