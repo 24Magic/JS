@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex布局</title>
+	<style type="text/css">
+
+		.example1 .parent {
+			display: flex;
+			border: 1px solid red;
+			height: 200px;
+		}
+		.example1 .parent .child {
+			width: 100px;
+			height: 100px;
+			margin: auto;
+			border: 1px solid green;
+		}
+
+		.example2 .parent {
+			display: flex;
+			border: 4px solid blue;
+			height: 200px;
+		}
+		.example2 .parent .child {
+			flex: 1;
+			border: 1px solid red;
+		}
+
+		.example2 .parent .child:nth-child(2) {
+			flex: 2;
+		}
+
+		.example3 .parent {
+			display: flex;
+			align-items: center;
+			border: 1px solid red;			
+		}
+		.example3 .parent .avatar {
+			width: 50px;
+			height: 50px;
+			margin-left: 10px;
+			margin-right: 10px;
+			border: 1px solid green;
+		}
+		.example3 .parent .content {
+			flex: 1;
+			height: 200px;
+			border: 1px solid blue;
+		}
+
+		.example4 .parent {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			border: 1px solid red;			
+		}
+
+		.example4 .parent>div {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			border-radius: 50%;
+			border: 1px solid green;
+		} 
+	</style>
+</head>
+<body>
+<div class="example1">
+	<h2>水平自适应居中，垂直居中</h2>
+	<div class="parent">
+		<div class="child">1</div>
+		<div class="child">2</div>
+		<div class="child">3</div>
+	</div>
+</div>
+<div class="example2">
+	<h2>水平按比例排列 1:2:1</h2>
+	<div class="parent">
+		<div class="child">1</div>
+		<div class="child">2</div>
+		<div class="child">3</div>
+	</div>
+</div>
+<div class="example3">
+	<h2>侧边栏垂直居中 内容铺满右边</h2>
+	<div class="parent">
+		<div class="avatar"></div>
+		<div class="content"></div>
+	</div>
+</div>
+<div class="example4">
+	<h2>水平自适应居中，多余元素到下一行自适应居中,改变窗口大小试试</h2>
+	<div class="parent">
+		<div class="child">1</div>
+		<div class="child">2</div>
+		<div class="child">3</div>
+		<div class="child">4</div>
+		<div class="child">5</div>
+		<div class="child">6</div>
+		<div class="child">7</div>
+	</div>
+</div>
+</body>
+</html>

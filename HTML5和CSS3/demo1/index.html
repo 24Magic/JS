@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+	.content {
+		width: 100px;
+		color: #f06d6a;
+		border: 1px solid #f00;
+	}
+	.text-overflow h3 {
+		white-space: nowrap; 
+		overflow: hidden; 
+		text-overflow: ellipsis;
+		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de;
+	}
+
+	.word-wrap p{
+		word-wrap: normal;
+	}
+
+	.break-all p{
+		word-break: break-all;
+	}
+	.break-word p{
+		word-break: break-word;
+	}
+
+	.pre p {
+		white-space: pre;
+	}
+
+	.text-shadow p {
+		font-size: 25px;
+		color: #ccc;
+		
+		color: #fff; text-shadow: 1px 1px rgba(197, 223, 248,0.8),2px 2px rgba(197, 223, 248,0.8),3px 3px rgba(197, 223, 248,0.8),4px 4px rgba(197, 223, 248,0.8),5px 5px rgba(197, 223, 248,0.8),6px 6px rgba(197, 223, 248,0.8);
+	}
+
+	
+</style>
+<body>
+<form>
+	<p>Email</p>
+	<input type="email" name="">
+	<input type="submit" name="">
+</form>
+<form>
+	<p>网址</p>
+	<input type="url" name="">
+	<input type="submit" name="">
+</form>
+<form>
+	<p>数字</p>
+	<input type="number" name="">
+	<input type="submit" name="">
+</form>
+<form>
+	<p>进度条</p>
+	<input type="range" name="">
+</form>
+<form>
+	<p>时间</p>
+	<input type="Date" name="">
+	<input type="month" name="">
+	<input type="week" name="">
+	<input type="time" name="">
+	<input type="datetime" name="">
+	<input type="submit" name="">
+</form>
+
+<p>文本</p>
+<div class="content text1">
+	<h3>我是大怪物！</h3>
+</div>
+<button id="text-overflow">隐藏超出文本</button>
+<div class="content text2">
+	<p>I        am a monster! hiahiahiahiahiahiahia! hello</p>
+</div>
+
+<button id="word-wrap">默认</button>
+<p>world-break</p>
+<button id="break-all">单词内部换行</button>
+<button id="break-word">长单词或URL内部换行</button>
+<p>white-space</p>
+<button id="pre">保留字符间的空白</button>
+<p>text-shadow</p>
+<button id="text-shadow">文本阴影</button>
+
+<script>
+	var text1 = $(document, '.text1')
+	var text2 = $(document, '.text2')
+	var textOverflow = $(document, '#text-overflow')
+	var wordWrap = $(document, '#word-wrap')
+	var breakAll = $(document, '#break-all')
+	var breakWord = $(document, '#break-word')
+	var pre = $(document, '#pre')
+	var textShadow = $(document, '#text-shadow')
+
+
+
+	textOverflow.addEventListener('click', function(){
+		text1.classList.add('text-overflow')
+		setTimeout(function () {
+			text1.classList.remove('text-overflow')
+		}, 2500)
+	})
+
+	wordWrap.addEventListener('click', function(){
+		text2.classList.add('word-wrap')
+		setTimeout(function(){
+			text2.classList.remove('word-wrap')
+		}, 2500)
+	})
+	breakAll.addEventListener('click', function(){
+		text2.classList.add('break-all')
+		setTimeout(function(){
+			text2.classList.remove('break-all')
+		}, 2500)		
+	})
+	breakWord.addEventListener('click', function(){
+		text2.classList.add('break-word')
+		setTimeout(function(){
+			text2.classList.remove('break-word')
+		}, 2500)		
+	})
+
+	pre.addEventListener('click', function(){
+		text2.classList.add('pre')
+		setTimeout(function(){
+			text2.classList.remove('pre')
+		}, 2500)		
+	})
+
+	textShadow.addEventListener('click', function(){
+		text2.classList.add('text-shadow')
+		setTimeout(function(){
+			text2.classList.remove('text-shadow')
+		}, 2500)		
+	})
+
+
+
+	function $(element, selector){
+		return element.querySelector(selector)
+	}
+</script>
+</body>
+</html>
