@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>哆啦A梦</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		#doraemen {
+			background-color: rgb(255, 255, 255);
+			display: block;
+		}
+	</style>
+</head>
+<body onmousemove="zuobiao(event)">
+<canvas id="doraemen" width="400" height="600"></canvas>
+<div id="put" style="margin: 0 auto; width: 50px; height:20px;" ></div>
+<script>
+	var cxt = document.querySelector('#doraemen')
+					  .getContext('2d')
+
+	//头部
+	cxt.beginPath() //起始路径
+	cxt.lineWidth = 1	//线宽度为1
+	cxt.strokeStyle = 'rgb(0 , 0 , 0)'	//笔触的颜色
+	cxt.arc(200, 175, 175, .7 * Math.PI, .3 * Math.PI) //绘制圆弧，中心点(200， 175)， 半径175
+	cxt.fillStyle = 'rgb(38, 163, 130)'	//设置填充时的颜色
+	cxt.fill()	//填充颜色
+	cxt.stroke()	//绘制路径
+
+	//脸部
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(255, 255, 255)'
+	cxt.moveTo(110, 110)	//将路径移到点(110， 110),不创建线条
+	cxt.quadraticCurveTo(-10, 200, 120, 315)	//创建二次贝塞尔曲线,控制点(-10， 200),结束点(120， 315)
+	cxt.lineTo(280, 315)	//添加一个新点,然后再画布中创建从(110, 110)到(280, 315)的线条
+	cxt.quadraticCurveTo(410, 210, 290, 110)
+	cxt.lineTo(110, 110)
+	cxt.fill()
+	cxt.stroke()
+
+	//眼睛
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(255, 255, 255)'
+	cxt.moveTo(110, 110)
+	cxt.bezierCurveTo(110, 25, 200, 25, 200, 100)	//创建三次贝塞尔曲线，控制点1(110， 25), 控制点2(200， 25),结束点(200, 100)
+	cxt.bezierCurveTo(200, 175, 110, 175, 110, 100)
+	cxt.moveTo(200, 100)
+	cxt.bezierCurveTo(200, 25, 290, 25, 290, 110)
+	cxt.moveTo(290, 100)
+	cxt.bezierCurveTo(290, 175, 200, 175, 200, 100)
+	cxt.fill()
+	cxt.stroke()
+
+	//右眼球
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(0, 0, 0)'
+	cxt.arc(230, 130, 12, 0, 2 * Math.PI)
+	cxt.fill()
+	cxt.stroke()
+	//左眼球
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(0 ,0 ,0)'
+	cxt.arc(170, 130, 12, 0, 2 * Math.PI)
+	cxt.fill()
+	cxt.stroke()
+
+	//鼻子
+	cxt.beginPath()
+	cxt.fillStyle = '#d05823'
+	cxt.arc(200, 165, 25, 0, 2 * Math.PI)
+	cxt.fill()
+	cxt.stroke()
+
+	//左胡须
+	cxt.beginPath()
+	cxt.moveTo(80, 175)
+	cxt.lineTo(150, 195)
+	cxt.moveTo(80, 200)
+	cxt.lineTo(150, 205)
+	cxt.moveTo(80, 225)
+	cxt.lineTo(150, 215)
+	//中胡须
+	cxt.moveTo(200, 195)
+	cxt.lineTo(200, 290)
+	//右胡须
+	cxt.moveTo(250, 195)
+	cxt.lineTo(320, 175)
+	cxt.moveTo(250, 205)
+	cxt.lineTo(320, 200)
+	cxt.moveTo(250, 215)
+	cxt.lineTo(320, 225)
+	cxt.stroke()
+
+	//嘴巴
+	cxt.moveTo(80, 240)
+	cxt.quadraticCurveTo(200, 350, 320, 240)
+	cxt.stroke()
+
+	//围巾
+	cxt.beginPath()
+	cxt.moveTo(96, 316)
+	cxt.lineTo(305, 316)
+	cxt.lineTo(320, 316)
+	cxt.arcTo(330, 316, 330, 326, 10)	//在画布上创建介于两个切线之间的弧,起点坐标(330, 316), 终点坐标为(330, 326), 半径为10
+	cxt.lineTo(330, 336)
+	cxt.arcTo(330, 346, 305, 346, 10)
+	cxt.lineTo(81, 346)
+	cxt.arcTo(71, 346, 71, 336, 10)
+	cxt.lineTo(71, 326)
+	cxt.arcTo(71, 316, 81, 316, 10)
+	cxt.lineTo(96, 316)
+	cxt.fillStyle = '#b13209'
+	cxt.fill()
+	cxt.stroke()
+
+	//衣服
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(38, 163, 130)'
+	cxt.moveTo(80, 346)
+	//左衣服
+	cxt.lineTo(26, 406)
+	cxt.lineTo(65, 440)
+	cxt.lineTo(85, 418)
+	cxt.lineTo(85, 528)
+	cxt.lineTo(185, 528)
+	//右衣服
+	cxt.lineTo(315, 528)
+	cxt.lineTo(315, 418)
+	cxt.lineTo(337, 440)
+	cxt.lineTo(374, 406)
+	cxt.lineTo(320, 346)
+	cxt.fill()
+	cxt.stroke()
+
+	//左手
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(255, 255, 255)'
+	cxt.arc(37, 433, 30, 0, 2 * Math.PI)
+	cxt.fill()
+	cxt.stroke()
+	//右手
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(255, 255, 255)'
+	cxt.arc(363, 433, 30, 0, 2 * Math.PI)
+	cxt.fill()
+	cxt.stroke()
+
+	//肚子
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(255, 255, 255)'
+	cxt.arc(200, 400, 91, 1.8 * Math.PI, 1.2 * Math.PI)
+	cxt.fill()
+	cxt.stroke()
+
+	//小口袋
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(255, 255, 255)'
+	cxt.moveTo(130, 394)
+	cxt.lineTo(270, 394)
+	cxt.bezierCurveTo(270, 490, 130, 490, 130, 394)
+	cxt.fill()
+	cxt.stroke()
+
+	//脚之间的间隙
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(255, 255, 255)'
+	cxt.arc(200, 529, 20, Math.PI, 0)
+	cxt.fill()
+	cxt.stroke()
+
+	//左脚
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(255, 255, 255)'
+	cxt.moveTo(180, 528)
+	cxt.lineTo(72, 528)
+	cxt.bezierCurveTo(52, 528, 52, 558, 72, 558)
+	cxt.lineTo(180, 558)
+	cxt.bezierCurveTo(200, 558, 200, 528, 180, 528)
+	cxt.fill()
+	cxt.stroke()
+	//右脚
+	cxt.beginPath()
+	cxt.fillStyle = 'rgb(255, 255, 255)'
+	cxt.moveTo(220, 528)
+	cxt.lineTo(328, 528)
+	cxt.bezierCurveTo(348, 528, 348, 558, 328, 558)
+	cxt.lineTo(220, 558)
+	cxt.bezierCurveTo(200, 558, 200, 528, 220, 528)
+	cxt.fill()
+	cxt.stroke()
+
+	function zuobiao(e){
+		var x = e.clientX
+		var y = e.clientY
+		var out = document.querySelector('#put')
+		out.innerHTML = "x: " + x + "\ny: " + y
+	}
+	
+</script>
+</body>
+</html>
