@@ -117,7 +117,7 @@
  		var nIntervId
  		//自动播放
  		function setIv(){
- 				nIntervId = setInterval(playNext,1800)
+ 				nIntervId = setInterval(playNext,3000)
  		}
  		setIv()
  		//停止播放
@@ -127,10 +127,10 @@
 
  		//给向前按钮添加向前事件
  		$btnPre.on('click', function(e){
- 			e.preventDefault() 
+ 			e.preventDefault() 			
  			playPre()
  		})
- 		//给向前按钮添加向前事件
+ 		//给向后按钮添加向后事件
  		$btnNext.on('click', function(e){
  			e.preventDefault()
  			playNext()
@@ -163,13 +163,13 @@
  			if(isAnimate) return;
  			isAnimate = true
 
- 			$imgCt.children().eq(currentIndex).fadeOut(1800)
+ 			$imgCt.children().eq(currentIndex).fadeOut(1000)
  			currentIndex++
- 			$imgCt.children().eq(currentIndex).fadeIn(1800)
+ 			$imgCt.children().eq(currentIndex).fadeIn(1000)
 
  			if(currentIndex === $imgLength){
  				currentIndex = 0
- 				$imgCt.children().eq(currentIndex).fadeIn(1800)
+ 				$imgCt.children().eq(currentIndex).fadeIn(1000)
  			}
 
  			isAnimate = false
@@ -180,13 +180,14 @@
  			if(isAnimate) return;
  			isAnimate = true
 
- 			$imgCt.children().eq(currentIndex).fadeOut(1800)
+ 			$imgCt.children().eq(currentIndex).fadeOut(1000)
  			currentIndex--
- 			$imgCt.children().eq(currentIndex).fadeIn(1800)
+ 			$imgCt.children().eq(currentIndex).fadeIn(1000)
 
+ 			console.log(currentIndex)
  			if(currentIndex < 0){
  				currentIndex = $imgLength-1
- 				$imgCt.children().eq(currentIndex).fadeIn(1800)
+ 				$imgCt.children().eq(currentIndex).fadeIn(1000)
  			}
  			
 
@@ -201,7 +202,7 @@
  				   .eq(currentIndex)
  				   .addClass('active')
  		}
- 	})
+ 	})()
  </script>
 </body>
 </html>
