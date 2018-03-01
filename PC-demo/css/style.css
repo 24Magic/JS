@@ -91,6 +91,10 @@ section {
   margin-left: -300px;
   z-index: 2;
 }
+#first-page .door-inside img {
+  width: 601px;
+  height: 361px;
+}
 #first-page .door {
   position: absolute;
   left: 50%;
@@ -344,6 +348,8 @@ section {
   height: 375px;
 }
 #news .news-list .bigTitle .summerView {
+  width: 457px;
+  height: 325px;
   z-index: 1;
 }
 #news .news-list .bigTitle .same-index {
@@ -406,6 +412,8 @@ section {
   background-size: cover;
 }
 #picturesWall .pictures .img img {
+  width: 218px;
+  height: 218px;
   opacity: .2;
 }
 #picturesWall .pictures .img.background1 {
